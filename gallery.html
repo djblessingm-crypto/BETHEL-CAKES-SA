@@ -1,2029 +1,937 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="description" content="Explore the Bethel Cakes birthday and wedding cake collection.">
 <title>Gallery | Bethel Cakes</title>
-
-<meta name="description" content="Explore the Bethel Cakes luxury cake gallery. Discover our birthday and wedding cake creations.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================================================
-   BETHEL CAKES — LUXURY GALLERY
-   ========================================================= */
-
-:root{
-    --wine:#5a0710;
-    --wine-dark:#390308;
-    --wine-light:#7c1822;
-
-    --cream:#fffaf2;
-    --cream-dark:#f6eee1;
-
-    --gold:#c9a15a;
-    --gold-light:#e3c98d;
-
-    --text:#27191a;
-    --muted:#766667;
-
-    --white:#ffffff;
-
-    --shadow:0 20px 60px rgba(57,3,8,.12);
-    --shadow-soft:0 12px 35px rgba(57,3,8,.09);
-
-    --radius-xl:42px;
-    --radius-lg:30px;
-    --radius-md:22px;
-    --radius-sm:16px;
+:root {
+  --wine:#5a0710;
+  --wine-dark:#390308;
+  --wine-light:#7c1822;
+  --cream:#fffaf2;
+  --cream-dark:#f6eee1;
+  --gold:#c9a15a;
+  --gold-light:#e3c98d;
+  --text:#27191a;
+  --muted:#766667;
+  --shadow:0 20px 60px rgba(57,3,8,.12);
 }
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:"DM Sans",sans-serif;
+  background:var(--cream);
+  color:var(--text);
+  overflow-x:hidden;
 }
-
-html{
-    scroll-behavior:smooth;
+a { color:inherit; text-decoration:none; }
+button { font:inherit; cursor:pointer; }
+img { display:block; max-width:100%; }
+.topbar {
+  margin:0 18px;
+  padding:11px;
+  text-align:center;
+  background:var(--wine);
+  color:white;
+  border-radius:0 0 25px 25px;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
 }
-
-body{
-    font-family:"DM Sans",sans-serif;
-    background:var(--cream);
-    color:var(--text);
-    overflow-x:hidden;
+.navbar {
+  position:sticky;
+  top:0;
+  z-index:1000;
+  padding:15px 5%;
+  background:rgba(255,250,242,.94);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid rgba(201,161,90,.2);
 }
-
-/* =========================================================
-   GLOBAL
-   ========================================================= */
-
-a{
-    color:inherit;
-    text-decoration:none;
+.nav-inner {
+  max-width:1380px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
 }
-
-button{
-    font-family:inherit;
+.brand { display:flex; align-items:center; gap:12px; }
+.brand-logo {
+  width:58px;
+  height:50px;
+  object-fit:cover;
+  border-radius:14px;
+  background:white;
 }
-
-img{
-    display:block;
-    max-width:100%;
+.brand-name {
+  color:var(--wine);
+  font:700 27px "Cormorant Garamond",serif;
 }
-
-::selection{
-    background:var(--wine);
-    color:white;
+.brand-tagline {
+  color:var(--gold);
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
 }
-
-/* =========================================================
-   TOP BAR
-   ========================================================= */
-
-.topbar{
-    margin:0 18px;
-    padding:11px 20px;
-
-    background:var(--wine);
-    color:white;
-
-    text-align:center;
-    font-size:10px;
-    font-weight:700;
-    letter-spacing:2.5px;
-    text-transform:uppercase;
-
-    border-radius:0 0 28px 28px;
-
-    position:relative;
-    z-index:1001;
-
-    box-shadow:0 10px 30px rgba(57,3,8,.12);
+.nav-links {
+  display:flex;
+  gap:7px;
+  align-items:center;
+  padding:6px;
+  background:white;
+  border-radius:30px;
 }
-
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
-
-.navbar{
-    position:sticky;
-    top:0;
-    z-index:1000;
-
-    padding:18px 30px;
-
-    background:rgba(255,250,242,.91);
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-
-    border-bottom:1px solid rgba(201,161,90,.14);
+.nav-links a {
+  padding:11px 16px;
+  border-radius:25px;
+  font-size:12px;
+  font-weight:600;
+  color:#624e4f;
 }
-
-.nav-inner{
-    max-width:1380px;
-    margin:auto;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:25px;
+.nav-links a:hover,
+.nav-links a.active {
+  background:var(--wine);
+  color:white;
 }
-
-.brand{
-    display:flex;
-    align-items:center;
-    gap:14px;
+.account-btn,.primary-btn {
+  display:inline-block;
+  padding:13px 22px;
+  border-radius:30px;
+  background:var(--wine);
+  color:white;
+  font-size:12px;
+  font-weight:700;
 }
-
-.brand-logo{
-    width:64px;
-    height:52px;
-
-    object-fit:cover;
-
-    border-radius:16px;
-
-    box-shadow:0 8px 22px rgba(57,3,8,.12);
-
-    background:white;
+.account-btn:hover,.primary-btn:hover {
+  background:var(--wine-light);
+  transform:translateY(-2px);
 }
-
-.brand-text{
+.mobile-menu {
+  display:none;
+  background:var(--wine);
+  color:white;
+  border:0;
+  border-radius:12px;
+  padding:10px 14px;
+  font-size:20px;
+}
+.hero {
+  min-height:440px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:90px 20px;
+  background:
+    radial-gradient(circle at 15% 20%,rgba(201,161,90,.18),transparent 30%),
+    radial-gradient(circle at 85% 80%,rgba(90,7,16,.10),transparent 30%),
+    var(--cream-dark);
+}
+.hero-content { max-width:800px; }
+.eyebrow,.section-kicker {
+  color:var(--gold);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:15px;
+}
+.hero h1 {
+  font:600 clamp(52px,8vw,88px)/.95 "Cormorant Garamond",serif;
+  color:var(--wine);
+}
+.hero h1 span { color:var(--gold); font-style:italic; }
+.hero-description {
+  max-width:620px;
+  margin:25px auto;
+  color:var(--muted);
+  line-height:1.9;
+  font-size:14px;
+}
+.hero-actions {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.secondary-btn {
+  display:inline-block;
+  padding:13px 22px;
+  border:1px solid var(--wine);
+  color:var(--wine);
+  border-radius:30px;
+  font-size:12px;
+  font-weight:700;
+}
+.gold-divider {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  padding:25px;
+}
+.gold-divider span {
+  width:70px;
+  height:1px;
+  background:var(--gold);
+}
+.gold-divider i {
+  width:8px;
+  height:8px;
+  background:var(--gold);
+  transform:rotate(45deg);
+}
+.gallery-section { padding:65px 5% 100px; }
+.gallery-container { max-width:1380px; margin:auto; }
+.section-heading { text-align:center; margin-bottom:35px; }
+.section-heading h2 {
+  color:var(--wine);
+  font:600 clamp(42px,6vw,65px)/.95 "Cormorant Garamond",serif;
+}
+.section-heading p {
+  max-width:620px;
+  margin:18px auto 0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.8;
+}
+.filters {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin:30px 0 38px;
+}
+.filter-btn {
+  padding:12px 20px;
+  border:1px solid rgba(90,7,16,.17);
+  border-radius:30px;
+  background:white;
+  color:var(--wine);
+  font-size:11px;
+  font-weight:700;
+  transition:.25s;
+}
+.filter-btn:hover,.filter-btn.active {
+  background:var(--wine);
+  color:white;
+  border-color:var(--wine);
+}
+.gallery-grid {
+  columns:4 240px;
+  column-gap:18px;
+}
+.gallery-item {
+  display:inline-block;
+  position:relative;
+  width:100%;
+  margin:0 0 18px;
+  overflow:hidden;
+  border-radius:22px;
+  background:var(--cream-dark);
+  box-shadow:var(--shadow);
+  cursor:pointer;
+  break-inside:avoid;
+  transition:transform .3s,opacity .3s;
+}
+.gallery-item:hover { transform:translateY(-5px); }
+.gallery-item img {
+  width:100%;
+  height:auto;
+  min-height:160px;
+  object-fit:cover;
+  transition:transform .5s;
+}
+.gallery-item:hover img { transform:scale(1.04); }
+.gallery-overlay {
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:flex-end;
+  padding:20px;
+  color:white;
+  background:linear-gradient(transparent 35%,rgba(35,0,5,.78));
+  opacity:0;
+  transition:opacity .3s;
+}
+.gallery-item:hover .gallery-overlay,
+.gallery-item:focus-visible .gallery-overlay { opacity:1; }
+.gallery-overlay-title {
+  font:600 25px "Cormorant Garamond",serif;
+}
+.gallery-overlay-category {
+  margin-top:4px;
+  color:var(--gold-light);
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+.image-fallback {
+  min-height:190px;
+  display:grid;
+  place-items:center;
+  padding:20px;
+  color:var(--wine);
+  background:var(--cream-dark);
+  font:600 24px "Cormorant Garamond",serif;
+  text-align:center;
+}
+.empty-state {
+  display:none;
+  padding:45px;
+  color:var(--muted);
+  text-align:center;
+}
+.cta {
+  margin:20px 5% 80px;
+  padding:75px 25px;
+  border-radius:35px;
+  background:var(--wine);
+  color:white;
+  text-align:center;
+}
+.cta-kicker {
+  color:var(--gold-light);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+.cta h2 {
+  margin:15px 0;
+  font:600 clamp(42px,6vw,65px)/.95 "Cormorant Garamond",serif;
+}
+.cta p {
+  max-width:560px;
+  margin:0 auto 25px;
+  color:rgba(255,255,255,.75);
+  font-size:13px;
+  line-height:1.8;
+}
+.cta .primary-btn {
+  background:var(--gold);
+  color:var(--wine-dark);
+}
+.footer {
+  padding:60px 5% 25px;
+  background:var(--wine-dark);
+  color:white;
+}
+.footer-container { max-width:1380px; margin:auto; }
+.footer-grid {
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:35px;
+}
+.footer h3 {
+  font:700 32px "Cormorant Garamond",serif;
+  color:var(--gold-light);
+}
+.footer p {
+  max-width:300px;
+  margin-top:12px;
+  color:rgba(255,255,255,.65);
+  font-size:12px;
+  line-height:1.8;
+}
+.footer-title {
+  margin-bottom:15px;
+  color:var(--gold-light);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+.footer-links { display:grid; gap:12px; }
+.footer-links a {
+  color:rgba(255,255,255,.7);
+  font-size:12px;
+}
+.footer-links a:hover { color:white; }
+.footer-bottom {
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  margin-top:45px;
+  padding-top:22px;
+  border-top:1px solid rgba(255,255,255,.15);
+  color:rgba(255,255,255,.5);
+  font-size:11px;
+}
+.whatsapp-float {
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:1500;
+  width:58px;
+  height:58px;
+  display:grid;
+  place-items:center;
+  border:3px solid var(--cream);
+  border-radius:50%;
+  background:var(--wine);
+  color:white;
+  font-size:13px;
+  font-weight:700;
+  box-shadow:var(--shadow);
+}
+.lightbox {
+  position:fixed;
+  inset:0;
+  z-index:5000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:25px;
+  background:rgba(25,2,5,.95);
+  backdrop-filter:blur(12px);
+}
+.lightbox.show { display:flex; }
+.lightbox-content {
+  max-width:1000px;
+  max-height:82vh;
+}
+.lightbox-image {
+  max-width:100%;
+  max-height:82vh;
+  object-fit:contain;
+  border-radius:20px;
+}
+.lightbox-close,.lightbox-prev,.lightbox-next {
+  position:fixed;
+  display:grid;
+  place-items:center;
+  width:48px;
+  height:48px;
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:50%;
+  background:rgba(255,255,255,.1);
+  color:white;
+  font-size:25px;
+}
+.lightbox-close { top:20px; right:20px; }
+.lightbox-prev { left:20px; top:50%; }
+.lightbox-next { right:20px; top:50%; }
+.lightbox-caption {
+  position:fixed;
+  bottom:20px;
+  left:0;
+  width:100%;
+  color:white;
+  text-align:center;
+  font-size:12px;
+}
+button:focus-visible,a:focus-visible,.gallery-item:focus-visible {
+  outline:3px solid var(--gold);
+  outline-offset:4px;
+}
+@media(max-width:950px) {
+  .nav-links { display:none; }
+  .mobile-menu { display:block; }
+  .nav-links.mobile-open {
+    position:absolute;
+    top:80px;
+    left:15px;
+    right:15px;
     display:flex;
     flex-direction:column;
+    align-items:stretch;
+    padding:12px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+  }
+  .nav-links.mobile-open a { text-align:center; }
+  .footer-grid { grid-template-columns:1fr 1fr; }
+}
+@media(max-width:600px) {
+  .brand-tagline { display:none; }
+  .brand-name { font-size:23px; }
+  .hero { min-height:390px; padding:65px 18px; }
+  .gallery-section { padding:55px 14px 75px; }
+  .gallery-grid { columns:2 130px; column-gap:10px; }
+  .gallery-item { margin-bottom:10px; border-radius:15px; }
+  .gallery-item img { min-height:130px; }
+  .gallery-overlay { opacity:1; padding:10px; }
+  .gallery-overlay-title { font-size:18px; }
+  .gallery-overlay-category { font-size:7px; }
+  .filters { gap:7px; }
+  .filter-btn { padding:10px 13px; font-size:10px; }
+  .cta { margin:10px 14px 55px; padding:55px 18px; }
+  .footer-grid { grid-template-columns:1fr 1fr; gap:28px 18px; }
+  .footer-bottom { flex-direction:column; text-align:center; }
+  .lightbox { padding:12px; }
+  .lightbox-image { max-height:72vh; }
+  .lightbox-prev { left:8px; }
+  .lightbox-next { right:8px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    scroll-behavior:auto!important;
+    animation-duration:.01ms!important;
+    transition-duration:.01ms!important;
+  }
 }
-
-.brand-name{
-    font-family:"Cormorant Garamond",serif;
-    color:var(--wine);
-    font-size:27px;
-    line-height:1;
-    font-weight:700;
-}
-
-.brand-tagline{
-    margin-top:4px;
-
-    color:var(--gold);
-    font-size:9px;
-    font-weight:700;
-    letter-spacing:2px;
-    text-transform:uppercase;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:7px;
-
-    padding:7px;
-
-    background:white;
-
-    border:1px solid rgba(201,161,90,.15);
-    border-radius:999px;
-
-    box-shadow:0 8px 28px rgba(57,3,8,.06);
-}
-
-.nav-links a{
-    padding:11px 18px;
-
-    border-radius:999px;
-
-    color:#624e4f;
-
-    font-size:13px;
-    font-weight:600;
-
-    transition:.3s ease;
-}
-
-.nav-links a:hover{
-    background:var(--cream-dark);
-    color:var(--wine);
-}
-
-.nav-links a.active{
-    background:var(--wine);
-    color:white;
-
-    box-shadow:0 8px 20px rgba(90,7,16,.2);
-}
-
-.nav-actions{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.account-btn{
-    padding:12px 19px;
-
-    border:1px solid rgba(201,161,90,.35);
-    border-radius:999px;
-
-    background:white;
-    color:var(--wine);
-
-    font-size:12px;
-    font-weight:700;
-
-    transition:.3s ease;
-}
-
-.account-btn:hover{
-    transform:translateY(-2px);
-    box-shadow:var(--shadow-soft);
-}
-
-.mobile-menu{
-    display:none;
-
-    width:45px;
-    height:45px;
-
-    border:0;
-    border-radius:50%;
-
-    background:var(--wine);
-    color:white;
-
-    cursor:pointer;
-
-    font-size:20px;
-}
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
-.hero{
-    position:relative;
-    overflow:hidden;
-
-    padding:95px 25px 105px;
-
-    background:
-        radial-gradient(circle at 10% 20%,rgba(201,161,90,.15),transparent 30%),
-        radial-gradient(circle at 90% 80%,rgba(124,24,34,.1),transparent 35%),
-        var(--cream);
-}
-
-.hero::before{
-    content:"";
-    position:absolute;
-
-    width:430px;
-    height:430px;
-
-    right:-170px;
-    top:-180px;
-
-    border:1px solid rgba(201,161,90,.2);
-    border-radius:50%;
-}
-
-.hero::after{
-    content:"";
-    position:absolute;
-
-    width:300px;
-    height:300px;
-
-    left:-150px;
-    bottom:-180px;
-
-    border:1px solid rgba(90,7,16,.1);
-    border-radius:50%;
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-
-    max-width:1000px;
-    margin:auto;
-
-    text-align:center;
-}
-
-.eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:12px;
-
-    color:var(--gold);
-
-    font-size:11px;
-    font-weight:700;
-    letter-spacing:3px;
-    text-transform:uppercase;
-}
-
-.eyebrow::before,
-.eyebrow::after{
-    content:"";
-    width:34px;
-    height:1px;
-
-    background:var(--gold);
-}
-
-.hero h1{
-    margin-top:20px;
-
-    font-family:"Cormorant Garamond",serif;
-
-    color:var(--wine);
-
-    font-size:clamp(58px,9vw,110px);
-    line-height:.85;
-    font-weight:600;
-
-    letter-spacing:-3px;
-}
-
-.hero h1 span{
-    color:var(--gold);
-    font-style:italic;
-}
-
-.hero-description{
-    max-width:650px;
-    margin:30px auto 0;
-
-    color:var(--muted);
-
-    font-size:15px;
-    line-height:1.8;
-}
-
-.hero-actions{
-    margin-top:35px;
-
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
-}
-
-.primary-btn,
-.secondary-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-
-    min-height:50px;
-
-    padding:0 25px;
-
-    border-radius:999px;
-
-    font-size:12px;
-    font-weight:700;
-
-    transition:.3s ease;
-}
-
-.primary-btn{
-    background:var(--wine);
-    color:white;
-
-    box-shadow:0 12px 30px rgba(90,7,16,.2);
-}
-
-.primary-btn:hover{
-    background:var(--wine-light);
-    transform:translateY(-3px);
-}
-
-.secondary-btn{
-    background:white;
-    color:var(--wine);
-
-    border:1px solid rgba(201,161,90,.35);
-}
-
-.secondary-btn:hover{
-    transform:translateY(-3px);
-    box-shadow:var(--shadow-soft);
-}
-
-/* =========================================================
-   GOLD DIVIDER
-   ========================================================= */
-
-.gold-divider{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-
-    margin:0 auto;
-
-    max-width:500px;
-}
-
-.gold-divider span{
-    height:1px;
-    flex:1;
-
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(201,161,90,.7)
-    );
-}
-
-.gold-divider span:last-child{
-    background:linear-gradient(
-        90deg,
-        rgba(201,161,90,.7),
-        transparent
-    );
-}
-
-.gold-divider i{
-    width:7px;
-    height:7px;
-
-    border-radius:50%;
-
-    background:var(--gold);
-}
-
-/* =========================================================
-   GALLERY SECTION
-   ========================================================= */
-
-.gallery-section{
-    padding:90px 25px 120px;
-
-    background:white;
-
-    position:relative;
-}
-
-.gallery-container{
-    max-width:1400px;
-    margin:auto;
-}
-
-.section-heading{
-    text-align:center;
-
-    max-width:760px;
-    margin:0 auto 55px;
-}
-
-.section-kicker{
-    color:var(--gold);
-
-    font-size:10px;
-    font-weight:700;
-
-    letter-spacing:3px;
-    text-transform:uppercase;
-}
-
-.section-heading h2{
-    margin-top:12px;
-
-    font-family:"Cormorant Garamond",serif;
-
-    color:var(--wine);
-
-    font-size:clamp(42px,5vw,68px);
-    line-height:.95;
-    font-weight:600;
-}
-
-.section-heading p{
-    margin-top:18px;
-
-    color:var(--muted);
-
-    font-size:14px;
-    line-height:1.8;
-}
-
-/* =========================================================
-   FILTERS
-   ========================================================= */
-
-.filters{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:9px;
-
-    margin-bottom:55px;
-}
-
-.filter-btn{
-    padding:12px 22px;
-
-    border:1px solid rgba(201,161,90,.25);
-    border-radius:999px;
-
-    background:var(--cream);
-    color:#624e4f;
-
-    font-size:11px;
-    font-weight:700;
-
-    cursor:pointer;
-
-    transition:.3s ease;
-}
-
-.filter-btn:hover{
-    color:var(--wine);
-    border-color:var(--gold-light);
-
-    transform:translateY(-2px);
-}
-
-.filter-btn.active{
-    background:var(--wine);
-    color:white;
-
-    border-color:var(--wine);
-
-    box-shadow:0 10px 25px rgba(90,7,16,.18);
-}
-
-/* =========================================================
-   FEATURED MOVING STRIP
-   ========================================================= */
-
-.gallery-moving{
-    overflow:hidden;
-
-    margin:0 -25px 70px;
-
-    padding:20px 0;
-
-    position:relative;
-}
-
-.gallery-moving::before,
-.gallery-moving::after{
-    content:"";
-
-    position:absolute;
-    top:0;
-    bottom:0;
-
-    width:120px;
-
-    z-index:3;
-
-    pointer-events:none;
-}
-
-.gallery-moving::before{
-    left:0;
-
-    background:linear-gradient(
-        90deg,
-        white,
-        transparent
-    );
-}
-
-.gallery-moving::after{
-    right:0;
-
-    background:linear-gradient(
-        270deg,
-        white,
-        transparent
-    );
-}
-
-.moving-track{
-    display:flex;
-    width:max-content;
-
-    gap:20px;
-
-    animation:galleryMove 42s linear infinite;
-}
-
-.moving-track:hover{
-    animation-play-state:paused;
-}
-
-.moving-card{
-    width:270px;
-    height:190px;
-
-    flex:0 0 270px;
-
-    overflow:hidden;
-
-    border-radius:28px;
-
-    background:var(--cream);
-
-    box-shadow:0 14px 40px rgba(57,3,8,.12);
-
-    border:1px solid rgba(201,161,90,.15);
-}
-
-.moving-card img{
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    transition:transform .6s ease;
-}
-
-.moving-card:hover img{
-    transform:scale(1.07);
-}
-
-@keyframes galleryMove{
-    from{
-        transform:translateX(0);
-    }
-
-    to{
-        transform:translateX(-50%);
-    }
-}
-
-/* =========================================================
-   MAIN GALLERY GRID
-   ========================================================= */
-
-.gallery-grid{
-    columns:4 280px;
-    column-gap:22px;
-}
-
-.gallery-item{
-    break-inside:avoid;
-
-    margin-bottom:22px;
-
-    position:relative;
-
-    overflow:hidden;
-
-    border-radius:28px;
-
-    background:var(--cream);
-
-    border:1px solid rgba(201,161,90,.13);
-
-    box-shadow:0 10px 35px rgba(57,3,8,.07);
-
-    cursor:pointer;
-
-    transform:translateZ(0);
-
-    transition:
-        transform .4s ease,
-        box-shadow .4s ease,
-        opacity .35s ease;
-}
-
-.gallery-item:hover{
-    transform:translateY(-7px);
-
-    box-shadow:0 25px 55px rgba(57,3,8,.16);
-}
-
-.gallery-item img{
-    width:100%;
-    height:auto;
-
-    min-height:220px;
-
-    object-fit:cover;
-
-    transition:transform .7s cubic-bezier(.2,.7,.2,1);
-}
-
-.gallery-item:hover img{
-    transform:scale(1.06);
-}
-
-.gallery-overlay{
-    position:absolute;
-
-    inset:0;
-
-    display:flex;
-    align-items:flex-end;
-
-    padding:22px;
-
-    background:linear-gradient(
-        to top,
-        rgba(57,3,8,.72),
-        rgba(57,3,8,.08) 55%,
-        transparent
-    );
-
-    opacity:0;
-
-    transition:.4s ease;
-}
-
-.gallery-item:hover .gallery-overlay{
-    opacity:1;
-}
-
-.gallery-overlay-content{
-    color:white;
-}
-
-.gallery-overlay-title{
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:26px;
-    line-height:1;
-
-    font-weight:600;
-}
-
-.gallery-overlay-category{
-    margin-top:5px;
-
-    color:var(--gold-light);
-
-    font-size:9px;
-    font-weight:700;
-
-    letter-spacing:2px;
-    text-transform:uppercase;
-}
-
-/* =========================================================
-   EMPTY STATE
-   ========================================================= */
-
-.empty-state{
-    display:none;
-
-    padding:70px 25px;
-
-    text-align:center;
-
-    background:var(--cream);
-
-    border-radius:35px;
-}
-
-.empty-state h3{
-    font-family:"Cormorant Garamond",serif;
-
-    color:var(--wine);
-
-    font-size:35px;
-}
-
-/* =========================================================
-   CTA
-   ========================================================= */
-
-.cta-section{
-    padding:30px 25px 110px;
-
-    background:white;
-}
-
-.cta{
-    max-width:1200px;
-    margin:auto;
-
-    position:relative;
-    overflow:hidden;
-
-    padding:75px 50px;
-
-    background:
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(201,161,90,.18),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            var(--wine-dark),
-            var(--wine)
-        );
-
-    color:white;
-
-    border-radius:42px;
-
-    box-shadow:0 30px 80px rgba(57,3,8,.22);
-
-    text-align:center;
-}
-
-.cta::before{
-    content:"";
-
-    position:absolute;
-
-    width:300px;
-    height:300px;
-
-    right:-130px;
-    bottom:-160px;
-
-    border:1px solid rgba(227,201,141,.3);
-
-    border-radius:50%;
-}
-
-.cta::after{
-    content:"";
-
-    position:absolute;
-
-    width:180px;
-    height:180px;
-
-    left:-80px;
-    top:-90px;
-
-    border:1px solid rgba(227,201,141,.2);
-
-    border-radius:50%;
-}
-
-.cta-content{
-    position:relative;
-    z-index:2;
-}
-
-.cta-kicker{
-    color:var(--gold-light);
-
-    font-size:10px;
-    font-weight:700;
-
-    letter-spacing:3px;
-    text-transform:uppercase;
-}
-
-.cta h2{
-    margin-top:12px;
-
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:clamp(42px,5vw,65px);
-
-    line-height:.95;
-}
-
-.cta p{
-    max-width:600px;
-
-    margin:20px auto 30px;
-
-    color:rgba(255,255,255,.72);
-
-    font-size:14px;
-    line-height:1.8;
-}
-
-.cta-buttons{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
-}
-
-.cta .primary-btn{
-    background:white;
-    color:var(--wine);
-}
-
-.cta .secondary-btn{
-    background:transparent;
-
-    border-color:rgba(255,255,255,.3);
-
-    color:white;
-}
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-.footer{
-    background:#2d0509;
-
-    color:white;
-
-    padding:70px 25px 30px;
-}
-
-.footer-container{
-    max-width:1250px;
-    margin:auto;
-}
-
-.footer-grid{
-    display:grid;
-    grid-template-columns:1.4fr 1fr 1fr 1fr;
-    gap:45px;
-}
-
-.footer-brand h3{
-    font-family:"Cormorant Garamond",serif;
-
-    color:white;
-
-    font-size:38px;
-}
-
-.footer-brand p{
-    max-width:340px;
-
-    margin-top:15px;
-
-    color:rgba(255,255,255,.62);
-
-    font-size:13px;
-    line-height:1.8;
-}
-
-.footer-title{
-    color:var(--gold-light);
-
-    font-size:10px;
-    font-weight:700;
-
-    letter-spacing:2px;
-    text-transform:uppercase;
-}
-
-.footer-links{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-
-    margin-top:18px;
-}
-
-.footer-links a{
-    color:rgba(255,255,255,.7);
-
-    font-size:13px;
-
-    transition:.25s ease;
-}
-
-.footer-links a:hover{
-    color:white;
-    transform:translateX(3px);
-}
-
-.footer-bottom{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
-
-    margin-top:55px;
-    padding-top:25px;
-
-    border-top:1px solid rgba(255,255,255,.1);
-
-    color:rgba(255,255,255,.42);
-
-    font-size:11px;
-}
-
-.footer-bottom a{
-    color:var(--gold-light);
-}
-
-/* =========================================================
-   WHATSAPP FLOAT
-   ========================================================= */
-
-.whatsapp-float{
-    position:fixed;
-
-    right:25px;
-    bottom:25px;
-
-    z-index:1000;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    width:62px;
-    height:62px;
-
-    border-radius:50%;
-
-    background:var(--wine);
-    color:white;
-
-    border:4px solid var(--cream);
-
-    box-shadow:0 15px 35px rgba(57,3,8,.25);
-
-    font-size:12px;
-    font-weight:700;
-
-    transition:.3s ease;
-}
-
-.whatsapp-float:hover{
-    transform:translateY(-5px) scale(1.04);
-
-    background:var(--wine-light);
-}
-
-/* =========================================================
-   LIGHTBOX
-   ========================================================= */
-
-.lightbox{
-    position:fixed;
-
-    inset:0;
-
-    z-index:5000;
-
-    display:none;
-    align-items:center;
-    justify-content:center;
-
-    padding:30px;
-
-    background:rgba(25,2,5,.94);
-
-    backdrop-filter:blur(15px);
-}
-
-.lightbox.show{
-    display:flex;
-}
-
-.lightbox-content{
-    max-width:1100px;
-    max-height:90vh;
-
-    position:relative;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.lightbox-image{
-    max-width:min(100%,1000px);
-    max-height:82vh;
-
-    object-fit:contain;
-
-    border-radius:30px;
-
-    box-shadow:0 30px 100px rgba(0,0,0,.5);
-}
-
-.lightbox-close{
-    position:fixed;
-
-    top:25px;
-    right:30px;
-
-    width:50px;
-    height:50px;
-
-    border:1px solid rgba(255,255,255,.25);
-    border-radius:50%;
-
-    background:rgba(255,255,255,.08);
-
-    color:white;
-
-    font-size:25px;
-
-    cursor:pointer;
-
-    transition:.3s ease;
-}
-
-.lightbox-close:hover{
-    background:white;
-    color:var(--wine);
-}
-
-.lightbox-prev,
-.lightbox-next{
-    position:fixed;
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    width:54px;
-    height:54px;
-
-    border:1px solid rgba(255,255,255,.25);
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.08);
-
-    color:white;
-
-    font-size:24px;
-
-    cursor:pointer;
-
-    transition:.3s ease;
-}
-
-.lightbox-prev{
-    left:25px;
-}
-
-.lightbox-next{
-    right:25px;
-}
-
-.lightbox-prev:hover,
-.lightbox-next:hover{
-    background:white;
-    color:var(--wine);
-}
-
-.lightbox-caption{
-    position:fixed;
-
-    bottom:25px;
-    left:50%;
-
-    transform:translateX(-50%);
-
-    color:white;
-
-    text-align:center;
-
-    font-size:12px;
-    letter-spacing:1px;
-}
-
-/* =========================================================
-   REVEAL ANIMATION
-   ========================================================= */
-
-.reveal{
-    opacity:0;
-    transform:translateY(25px);
-
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
-}
-
-.reveal.visible{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media(max-width:1050px){
-
-    .nav-links{
-        gap:2px;
-    }
-
-    .nav-links a{
-        padding:10px 12px;
-        font-size:11px;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr 1fr;
-    }
-}
-
-@media(max-width:800px){
-
-    .navbar{
-        padding:14px 18px;
-    }
-
-    .brand-logo{
-        width:56px;
-        height:46px;
-    }
-
-    .brand-name{
-        font-size:24px;
-    }
-
-    .nav-links,
-    .account-btn{
-        display:none;
-    }
-
-    .mobile-menu{
-        display:block;
-    }
-
-    .nav-links.mobile-open{
-        display:flex;
-
-        position:absolute;
-
-        top:82px;
-        left:18px;
-        right:18px;
-
-        padding:10px;
-
-        flex-direction:column;
-
-        background:white;
-
-        border-radius:28px;
-
-        box-shadow:0 25px 60px rgba(57,3,8,.15);
-    }
-
-    .nav-links.mobile-open a{
-        width:100%;
-        text-align:center;
-    }
-
-    .hero{
-        padding:75px 20px 85px;
-    }
-
-    .hero h1{
-        letter-spacing:-2px;
-    }
-
-    .gallery-section{
-        padding:70px 18px 90px;
-    }
-
-    .gallery-moving{
-        margin-left:-18px;
-        margin-right:-18px;
-    }
-
-    .moving-card{
-        width:220px;
-        height:155px;
-        flex-basis:220px;
-    }
-
-    .gallery-grid{
-        columns:2 180px;
-        column-gap:14px;
-    }
-
-    .gallery-item{
-        margin-bottom:14px;
-        border-radius:21px;
-    }
-
-    .gallery-item img{
-        min-height:170px;
-    }
-
-    .gallery-overlay{
-        opacity:1;
-        padding:15px;
-    }
-
-    .gallery-overlay-title{
-        font-size:20px;
-    }
-
-    .cta{
-        padding:60px 25px;
-        border-radius:32px;
-    }
-
-    .footer{
-        padding:60px 20px 25px;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr;
-        gap:35px;
-    }
-
-    .footer-bottom{
-        flex-direction:column;
-        text-align:center;
-    }
-}
-
-@media(max-width:520px){
-
-    .topbar{
-        margin:0 10px;
-        padding:10px;
-        font-size:8px;
-        letter-spacing:1.8px;
-    }
-
-    .brand-tagline{
-        display:none;
-    }
-
-    .hero h1{
-        font-size:57px;
-    }
-
-    .hero-description{
-        font-size:13px;
-    }
-
-    .section-heading h2{
-        font-size:45px;
-    }
-
-    .filters{
-        gap:7px;
-    }
-
-    .filter-btn{
-        padding:10px 15px;
-        font-size:10px;
-    }
-
-    .gallery-grid{
-        columns:2 140px;
-        column-gap:10px;
-    }
-
-    .gallery-item{
-        margin-bottom:10px;
-        border-radius:17px;
-    }
-
-    .gallery-item img{
-        min-height:130px;
-    }
-
-    .gallery-overlay{
-        padding:11px;
-    }
-
-    .gallery-overlay-title{
-        font-size:17px;
-    }
-
-    .gallery-overlay-category{
-        font-size:7px;
-    }
-
-    .whatsapp-float{
-        width:55px;
-        height:55px;
-
-        right:17px;
-        bottom:17px;
-    }
-
-    .lightbox{
-        padding:15px;
-    }
-
-    .lightbox-image{
-        border-radius:20px;
-        max-height:75vh;
-    }
-
-    .lightbox-prev,
-    .lightbox-next{
-        width:45px;
-        height:45px;
-    }
-
-    .lightbox-prev{
-        left:10px;
-    }
-
-    .lightbox-next{
-        right:10px;
-    }
-}
-
-
-/* ---- gallery rebuild ---- */
-.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.gallery-item{background:linear-gradient(110deg,#f4e8df 30%,#fffaf5 50%,#f4e8df 70%);background-size:200% 100%;animation:shimmer 1.6s linear infinite}
-.gallery-item.is-loaded,.gallery-item.is-broken{animation:none;background:var(--cream)}
-.gallery-item[hidden]{display:none}
-.gallery-item.enter{animation:galleryIn .45s ease both}
-@keyframes shimmer{to{background-position:-200% 0}}
-@keyframes galleryIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.gallery-open{display:block;width:100%;padding:0;border:0;background:none;cursor:pointer;text-align:left;font:inherit;color:inherit}
-.gallery-open:focus-visible,.filter-btn:focus-visible,.lightbox button:focus-visible{outline:3px solid #c9a15a;outline-offset:3px}
-.gallery-item img{opacity:0;transition:opacity .5s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
-.gallery-item.is-loaded img{opacity:1}
-.gallery-item.is-broken img{display:none}
-.gallery-item.is-broken .gallery-open{min-height:220px;display:flex;align-items:center;justify-content:center;color:#806f72;font-size:13px}
-.gallery-item.is-broken .gallery-overlay{display:none}
-.filter-btn .count{opacity:.6;font-size:.85em;margin-left:4px}
-.moving-track{gap:0!important}
-.moving-card{margin-right:20px}
-.lightbox-image{transition:opacity .25s ease}
-.lightbox-image.is-loading{opacity:.25}
-.lightbox{touch-action:pan-y}
-.img-failed{visibility:hidden}
-@media (prefers-reduced-motion:reduce){.moving-track{animation:none!important}.gallery-item,.gallery-item.enter{animation:none}}
 </style>
 </head>
 
 <body>
 
-<!-- =====================================================
-     TOP BAR
-     ===================================================== -->
-
-<div class="topbar">
-    Every Cake Tells a Story
-</div>
-
-
-<!-- =====================================================
-     NAVIGATION
-     ===================================================== -->
+<div class="topbar">Every Cake Tells a Story</div>
 
 <header class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img class="brand-logo"
+        src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2009.08.24.jpeg"
+        alt="Bethel Cakes logo">
+      <div>
+        <div class="brand-name">Bethel Cakes</div>
+        <div class="brand-tagline">Every Cake Tells a Story</div>
+      </div>
+    </a>
 
-    <div class="nav-inner">
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
 
-        <a href="index.html" class="brand">
-
-            <img
-                class="brand-logo"
-                src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2009.08.24%20(1).jpeg" data-srcs="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2009.08.24.jpeg|https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2009.08.24.jpeg"
-                alt="Bethel Cakes Logo"
-            >
-
-            <div class="brand-text">
-
-                <div class="brand-name">
-                    Bethel Cakes
-                </div>
-
-                <div class="brand-tagline">
-                    Every Cake Tells a Story
-                </div>
-
-            </div>
-
-        </a>
-
-
-        <nav class="nav-links" id="navLinks">
-
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="gallery.html" class="active">
-                Gallery
-            </a>
-
-            <a href="index.html#about">
-                About
-            </a>
-
-            <a href="index.html#contact">
-                Contact
-            </a>
-
-        </nav>
-
-
-        <div class="nav-actions">
-
-            <a href="login.html" class="account-btn">
-                My Account
-            </a>
-
-            <button
-                class="mobile-menu"
-                id="mobileMenu"
-                aria-label="Open menu"
-            >
-                ☰
-            </button>
-
-        </div>
-
+    <div>
+      <a href="login.html" class="account-btn">My Account</a>
+      <button class="mobile-menu" id="mobileMenu"
+        aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
-
+  </div>
 </header>
 
-
-<!-- =====================================================
-     HERO
-     ===================================================== -->
-
 <section class="hero">
-
-    <div class="hero-content reveal">
-
-        <div class="eyebrow">
-            The Bethel Collection
-        </div>
-
-        <h1>
-            Made to be<br>
-            <span>remembered.</span>
-        </h1>
-
-        <p class="hero-description">
-            Explore a collection of handcrafted birthday and wedding cakes
-            created with elegance, creativity and attention to every detail.
-            At Bethel Cakes, every creation tells its own story.
-        </p>
-
-        <div class="hero-actions">
-
-            <a href="#collection" class="primary-btn">
-                Explore Gallery
-            </a>
-
-            <a
-                href="https://wa.me/27611554022?text=Hello%20Bethel%20Cakes%2C%20I%20would%20like%20to%20order%20a%20cake."
-                class="secondary-btn"
-                target="_blank"
-            >
-                Order on WhatsApp
-            </a>
-
-        </div>
-
+  <div class="hero-content">
+    <div class="eyebrow">The Bethel Collection</div>
+    <h1>Made to be<br><span>remembered.</span></h1>
+    <p class="hero-description">
+      Explore a collection of handcrafted birthday and wedding cakes
+      created with elegance, creativity and attention to every detail.
+      At Bethel Cakes, every creation tells its own story.
+    </p>
+    <div class="hero-actions">
+      <a href="#collection" class="primary-btn">Explore Gallery</a>
+      <a href="https://wa.me/27611554022?text=Hello%20Bethel%20Cakes%2C%20I%20would%20like%20to%20order%20a%20cake."
+        class="secondary-btn" target="_blank" rel="noopener">Order on WhatsApp</a>
     </div>
-
+  </div>
 </section>
 
-
-<!-- =====================================================
-     DIVIDER
-     ===================================================== -->
-
-<div class="gold-divider">
-
-    <span></span>
-    <i></i>
-    <span></span>
-
-</div>
-
-
-<!-- =====================================================
-     GALLERY
-     ===================================================== -->
+<div class="gold-divider"><span></span><i></i><span></span></div>
 
 <section class="gallery-section" id="collection">
+  <div class="gallery-container">
+    <div class="section-heading">
+      <div class="section-kicker">Our Creations</div>
+      <h2>A Taste of<br>Our Gallery</h2>
+      <p>
+        From beautiful birthday celebrations to unforgettable wedding
+        moments, discover some of the cakes created by Bethel Cakes.
+      </p>
+    </div>
 
-    <div class="gallery-container">
+    <div class="filters" aria-label="Filter cake gallery">
+      <button class="filter-btn active" data-filter="all" aria-pressed="true">All Cakes</button>
+      <button class="filter-btn" data-filter="birthday" aria-pressed="false">Birthday Cakes</button>
+      <button class="filter-btn" data-filter="wedding" aria-pressed="false">Wedding Cakes</button>
+    </div>
 
+    <div class="gallery-grid" id="galleryGrid">
 
-        <div class="section-heading reveal">
+      <!-- WEDDING CAKES -->
+      <article class="gallery-item" data-category="wedding" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.13.50%20%282%29.jpeg" alt="Bethel Cakes wedding cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Wedding Collection</div><div class="gallery-overlay-category">Wedding Cake</div></div></div>
+      </article>
 
-            <div class="section-kicker">
-                Our Creations
-            </div>
+      <article class="gallery-item" data-category="wedding" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.13.50%20%281%29.jpeg" alt="Bethel Cakes wedding cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Wedding Collection</div><div class="gallery-overlay-category">Wedding Cake</div></div></div>
+      </article>
 
-            <h2>
-                A Taste of<br>
-                Our Gallery
-            </h2>
+      <article class="gallery-item" data-category="wedding" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.13.50.jpeg" alt="Bethel Cakes wedding cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Wedding Collection</div><div class="gallery-overlay-category">Wedding Cake</div></div></div>
+      </article>
 
-            <p>
-                From beautiful birthday celebrations to unforgettable
-                wedding moments, discover some of the cakes created
-                by Bethel Cakes.
-            </p>
+      <article class="gallery-item" data-category="wedding" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.17.00.jpeg" alt="Bethel Cakes wedding cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Wedding Collection</div><div class="gallery-overlay-category">Wedding Cake</div></div></div>
+      </article>
 
-        </div>
+      <!-- BIRTHDAY CAKES -->
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.41.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
 
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.42%20%281%29.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
 
-        <!-- =================================================
-             FILTERS
-             ================================================= -->
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.42%20%282%29.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
 
-        <div class="filters reveal" id="galleryFilters" role="group" aria-label="Filter cakes by category"></div>
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.42.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
 
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.43%20%281%29.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
 
-        <!-- =================================================
-             MOVING FEATURE STRIP
-             ================================================= -->
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.43.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
 
-        <div class="gallery-moving">
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.44%20%281%29.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
 
-            <div class="moving-track" id="movingTrack"></div>
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.44.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
 
-        </div>
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.45%20%281%29.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
 
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.45%20%282%29.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
 
-        <!-- =================================================
-             MAIN GALLERY
-             ================================================= -->
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.45%20%283%29.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
 
-        <div class="gallery-grid" id="galleryGrid" aria-live="polite"></div>
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.45.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
 
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.46%20%281%29.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
 
-        <div class="empty-state" id="emptyState">
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.46%20%282%29.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
 
-            <h3>
-                No cakes found
-            </h3>
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.46.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
 
-        </div>
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.47%20%281%29.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
+
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.47%20%282%29.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
+
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.47.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
+
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.48%20%281%29.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
+
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.48%20%282%29.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
+
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.48.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
+
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.49%20%281%29.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
+
+      <article class="gallery-item" data-category="birthday" tabindex="0">
+        <img src="https://raw.githubusercontent.com/djblessingm-crypto/Bethel-Cakes/main/WhatsApp%20Image%202026-09-06%20at%2010.14.49.jpeg" alt="Bethel Cakes birthday cake" loading="lazy" decoding="async">
+        <div class="gallery-overlay"><div><div class="gallery-overlay-title">Birthday Collection</div><div class="gallery-overlay-category">Birthday Cake</div></div></div>
+      </article>
 
     </div>
 
-</section>
-
-
-<!-- =====================================================
-     CTA
-     ===================================================== -->
-
-<section class="cta-section">
-
-    <div class="cta">
-
-        <div class="cta-content">
-
-            <div class="cta-kicker">
-                Your celebration deserves something special
-            </div>
-
-            <h2>
-                Ready to create<br>
-                your cake story?
-            </h2>
-
-            <p>
-                Tell us what you are celebrating and let Bethel Cakes
-                create something beautiful for your special moment.
-            </p>
-
-            <div class="cta-buttons">
-
-                <a
-                    href="https://wa.me/27611554022?text=Hello%20Bethel%20Cakes%2C%20I%20would%20like%20to%20order%20a%20cake."
-                    target="_blank"
-                    class="primary-btn"
-                >
-                    Order on WhatsApp
-                </a>
-
-                <a
-                    href="index.html"
-                    class="secondary-btn"
-                >
-                    Back to Home
-                </a>
-
-            </div>
-
-        </div>
-
+    <div class="empty-state" id="emptyState">
+      No cakes found in this collection yet.
     </div>
-
+  </div>
 </section>
 
-
-<!-- =====================================================
-     FOOTER
-     ===================================================== -->
+<section class="cta">
+  <div class="cta-kicker">Your celebration deserves something special</div>
+  <h2>Ready to create<br>your cake story?</h2>
+  <p>
+    Tell us what you are celebrating and let Bethel Cakes create
+    something beautiful for your special moment.
+  </p>
+  <a class="primary-btn"
+    href="https://wa.me/27611554022?text=Hello%20Bethel%20Cakes%2C%20I%20would%20like%20to%20order%20a%20cake."
+    target="_blank" rel="noopener">Order on WhatsApp</a>
+</section>
 
 <footer class="footer">
-
-    <div class="footer-container">
-
-        <div class="footer-grid">
-
-
-            <div class="footer-brand">
-
-                <h3>
-                    Bethel Cakes
-                </h3>
-
-                <p>
-                    Beautiful cakes created for beautiful moments.
-                    Every creation is made with care, creativity
-                    and a little bit of sweetness.
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <div class="footer-title">
-                    Explore
-                </div>
-
-                <div class="footer-links">
-
-                    <a href="index.html">
-                        Home
-                    </a>
-
-                    <a href="gallery.html">
-                        Gallery
-                    </a>
-
-                    <a href="index.html#about">
-                        About Us
-                    </a>
-
-                    <a href="login.html">
-                        My Account
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div>
-
-                <div class="footer-title">
-                    Cakes
-                </div>
-
-                <div class="footer-links">
-
-                    <a href="#collection">
-                        Birthday Cakes
-                    </a>
-
-                    <a href="#collection">
-                        Wedding Cakes
-                    </a>
-
-                    <a
-                        href="https://wa.me/27611554022?text=Hello%20Bethel%20Cakes%2C%20I%20would%20like%20to%20order%20a%20cake."
-                        target="_blank"
-                    >
-                        Custom Cakes
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div>
-
-                <div class="footer-title">
-                    Contact
-                </div>
-
-                <div class="footer-links">
-
-                    <a href="tel:0611554022">
-                        061 155 4022
-                    </a>
-
-                    <a
-                        href="https://wa.me/27611554022"
-                        target="_blank"
-                    >
-                        WhatsApp
-                    </a>
-
-                    <a
-                        href="https://maps.app.goo.gl/oEKR9ovDCus6sSZdA"
-                        target="_blank"
-                    >
-                        Find Us
-                    </a>
-
-                </div>
-
-            </div>
-
-
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div>
+        <h3>Bethel Cakes</h3>
+        <p>Beautiful cakes created for beautiful moments. Every creation is made with care, creativity and a little bit of sweetness.</p>
+      </div>
+      <div>
+        <div class="footer-title">Explore</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="index.html#about">About Us</a>
+          <a href="login.html">My Account</a>
         </div>
-
-
-        <div class="footer-bottom">
-
-            <div>
-                © <span id="year"></span> Bethel Cakes. All rights reserved.
-            </div>
-
-            <div>
-                Every Cake Tells a Story
-            </div>
-
+      </div>
+      <div>
+        <div class="footer-title">Cakes</div>
+        <div class="footer-links">
+          <a href="#collection" onclick="setCakeFilter('birthday')">Birthday Cakes</a>
+          <a href="#collection" onclick="setCakeFilter('wedding')">Wedding Cakes</a>
+          <a href="https://wa.me/27611554022" target="_blank" rel="noopener">Custom Cakes</a>
         </div>
-
+      </div>
+      <div>
+        <div class="footer-title">Contact</div>
+        <div class="footer-links">
+          <a href="tel:0611554022">061 155 4022</a>
+          <a href="https://wa.me/27611554022" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://maps.app.goo.gl/oEKR9ovDCus6sSZdA" target="_blank" rel="noopener">Find Us</a>
+        </div>
+      </div>
     </div>
-
+    <div class="footer-bottom">
+      <div>© <span id="year"></span> Bethel Cakes. All rights reserved.</div>
+      <div>Every Cake Tells a Story</div>
+    </div>
+  </div>
 </footer>
 
+<a class="whatsapp-float"
+  href="https://wa.me/27611554022?text=Hello%20Bethel%20Cakes%2C%20I%20would%20like%20to%20order%20a%20cake."
+  target="_blank" rel="noopener" aria-label="Order on WhatsApp">WA</a>
 
-<!-- =====================================================
-     WHATSAPP
-     ===================================================== -->
-
-<a
-    href="https://wa.me/27611554022?text=Hello%20Bethel%20Cakes%2C%20I%20would%20like%20to%20order%20a%20cake."
-    target="_blank"
-    class="whatsapp-float"
-    aria-label="Order on WhatsApp"
->
-    WA
-</a>
-
-
-<!-- =====================================================
-     LIGHTBOX
-     ===================================================== -->
-
-<div class="lightbox" id="lightbox">
-
-    <button
-        class="lightbox-close"
-        id="lightboxClose"
-        aria-label="Close"
-    >
-        ×
-    </button>
-
-    <button
-        class="lightbox-prev"
-        id="lightboxPrev"
-        aria-label="Previous image"
-    >
-        ‹
-    </button>
-
-    <div class="lightbox-content">
-
-        <img
-            class="lightbox-image"
-            id="lightboxImage"
-            src=""
-            alt="Bethel Cakes"
-        >
-
-    </div>
-
-    <button
-        class="lightbox-next"
-        id="lightboxNext"
-        aria-label="Next image"
-    >
-        ›
-    </button>
-
-    <div class="lightbox-caption" id="lightboxCaption">
-    </div>
-
+<!-- PHOTO VIEWER -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close photo">×</button>
+  <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous photo">‹</button>
+  <div class="lightbox-content">
+    <img class="lightbox-image" id="lightboxImage" src="" alt="">
+  </div>
+  <button class="lightbox-next" id="lightboxNext" aria-label="Next photo">›</button>
+  <div class="lightbox-caption" id="lightboxCaption"></div>
 </div>
 
-
-<!-- =====================================================
-     JAVASCRIPT
-     ===================================================== -->
-
-<script src="js/gallery-data.js"></script>
-<script src="js/gallery.js"></script>
 <script>
+// FOOTER YEAR
+document.getElementById("year").textContent = new Date().getFullYear();
 
-/* =========================================================
-   YEAR
-   ========================================================= */
+// MOBILE NAVIGATION
+const mobileMenu = document.getElementById("mobileMenu");
+const navLinks = document.getElementById("navLinks");
 
-document.getElementById("year").textContent =
-    new Date().getFullYear();
-
-
-/* =========================================================
-   MOBILE MENU
-   ========================================================= */
-
-const mobileMenu =
-    document.getElementById("mobileMenu");
-
-const navLinks =
-    document.getElementById("navLinks");
-
-mobileMenu.addEventListener("click", function(){
-
-    navLinks.classList.toggle("mobile-open");
-
+mobileMenu.addEventListener("click", () => {
+  const open = navLinks.classList.toggle("mobile-open");
+  mobileMenu.setAttribute("aria-expanded", String(open));
+  mobileMenu.setAttribute("aria-label", open ? "Close menu" : "Open menu");
 });
 
-
-document.querySelectorAll(".nav-links a").forEach(function(link){
-
-    link.addEventListener("click", function(){
-
-        navLinks.classList.remove("mobile-open");
-
-    });
-
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("mobile-open");
+    mobileMenu.setAttribute("aria-expanded", "false");
+  });
 });
 
+// IMAGE FALLBACK
+document.querySelectorAll("img").forEach(img => {
+  img.addEventListener("error", () => {
+    if (img.dataset.failed) return;
+    img.dataset.failed = "true";
 
-/* =========================================================
-   REVEAL ANIMATIONS
-   ========================================================= */
+    const fallback = document.createElement("div");
+    fallback.className = "image-fallback";
+    fallback.textContent = "Bethel Cakes";
 
-const revealElements =
-    document.querySelectorAll(".reveal");
-
-
-const revealObserver =
-    new IntersectionObserver(
-
-        function(entries){
-
-            entries.forEach(function(entry){
-
-                if(entry.isIntersecting){
-
-                    entry.target.classList.add("visible");
-
-                    revealObserver.unobserve(
-                        entry.target
-                    );
-
-                }
-
-            });
-
-        },
-
-        {
-            threshold:.08
-        }
-
-    );
-
-
-revealElements.forEach(function(element){
-
-    revealObserver.observe(element);
-
+    img.insertAdjacentElement("afterend", fallback);
+    img.style.display = "none";
+  });
 });
 
+// GALLERY FILTERS
+const filterButtons = document.querySelectorAll(".filter-btn");
+const galleryItems = Array.from(document.querySelectorAll(".gallery-item"));
+const emptyState = document.getElementById("emptyState");
 
-/* =========================================================
-   INITIAL VISIBILITY
-   ========================================================= */
+function setCakeFilter(category) {
+  filterButtons.forEach(button => {
+    const active = button.dataset.filter === category;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
 
-window.addEventListener("load", function(){
+  let count = 0;
 
-    document.querySelectorAll(".reveal").forEach(function(element){
+  galleryItems.forEach(item => {
+    const show = category === "all" || item.dataset.category === category;
+    item.style.display = show ? "inline-block" : "none";
+    item.setAttribute("aria-hidden", String(!show));
+    if (show) count++;
+  });
 
-        const rect =
-            element.getBoundingClientRect();
+  emptyState.style.display = count ? "none" : "block";
+}
 
-
-        if(rect.top < window.innerHeight){
-
-            element.classList.add("visible");
-
-        }
-
-    });
-
+filterButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    setCakeFilter(button.dataset.filter);
+  });
 });
 
+// LIGHTBOX
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxCaption = document.getElementById("lightboxCaption");
+const closeButton = document.getElementById("lightboxClose");
+const previousButton = document.getElementById("lightboxPrev");
+const nextButton = document.getElementById("lightboxNext");
+
+let visibleImages = [];
+let currentImage = 0;
+let lastFocusedElement = null;
+
+function refreshVisibleImages() {
+  visibleImages = galleryItems.filter(item => item.style.display !== "none");
+}
+
+function showLightboxImage() {
+  const item = visibleImages[currentImage];
+  if (!item) return;
+
+  const image = item.querySelector("img");
+  lightboxImage.src = image.currentSrc || image.src;
+  lightboxImage.alt = image.alt;
+  lightboxCaption.textContent = image.alt;
+}
+
+function openLightbox(item) {
+  refreshVisibleImages();
+  currentImage = visibleImages.indexOf(item);
+  if (currentImage < 0) return;
+
+  lastFocusedElement = document.activeElement;
+  showLightboxImage();
+
+  lightbox.classList.add("show");
+  lightbox.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+  closeButton.focus();
+}
+
+function closeLightbox() {
+  lightbox.classList.remove("show");
+  lightbox.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+
+  if (lastFocusedElement) lastFocusedElement.focus();
+}
+
+function previousImage() {
+  if (!visibleImages.length) return;
+  currentImage = (currentImage - 1 + visibleImages.length) % visibleImages.length;
+  showLightboxImage();
+}
+
+function nextImage() {
+  if (!visibleImages.length) return;
+  currentImage = (currentImage + 1) % visibleImages.length;
+  showLightboxImage();
+}
+
+galleryItems.forEach(item => {
+  item.setAttribute("role", "button");
+  item.addEventListener("click", () => openLightbox(item));
+
+  item.addEventListener("keydown", event => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openLightbox(item);
+    }
+  });
+});
+
+closeButton.addEventListener("click", closeLightbox);
+previousButton.addEventListener("click", previousImage);
+nextButton.addEventListener("click", nextImage);
+
+lightbox.addEventListener("click", event => {
+  if (event.target === lightbox) closeLightbox();
+});
+
+document.addEventListener("keydown", event => {
+  if (!lightbox.classList.contains("show")) return;
+
+  if (event.key === "Escape") closeLightbox();
+  if (event.key === "ArrowLeft") previousImage();
+  if (event.key === "ArrowRight") nextImage();
+});
+
+// SWIPE ON MOBILE
+let touchStartX = 0;
+
+lightbox.addEventListener("touchstart", event => {
+  touchStartX = event.changedTouches[0].screenX;
+}, { passive:true });
+
+lightbox.addEventListener("touchend", event => {
+  const difference = event.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(difference) < 50) return;
+  if (difference > 0) previousImage();
+  else nextImage();
+}, { passive:true });
 </script>
 
 </body>
