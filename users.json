@@ -1,0 +1,18 @@
+[
+  {
+    "googleId": "105420838742017876449",
+    "name": "blessing makusha",
+    "email": "djblessingm@gmail.com",
+    "picture": "https://lh3.googleusercontent.com/a/ACg8ocJxX-IgBvJEXiXbBDd1nLjLFuQ5VT9UD90nrwC-dZOi0BvgHhxH=s96-c",
+    "createdAt": "2026-09-11T18:49:57.480Z"
+  },
+  {
+    "id": "270f2c2d-9abd-4bc7-997a-b278224cc88d",
+    "name": "blessing makusha",
+    "email": "wadzachitk@gmail.com",
+    "salt": "1c1756530c1744163d6385bed518091c",
+    "passwordHash": "65e61474ecdef458454f01940b78d3230bb43293347d65426b53ee6c2a7f4bcb6722ade6133308bb5c30de621ed328c251894468d9b307a6c22d3ff671a1f5c4",
+    "verified": false,
+    "createdAt": "2026-09-17T19:10:21.667Z"
+  }
+]

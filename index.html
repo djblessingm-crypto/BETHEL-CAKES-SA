@@ -1,0 +1,2401 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bethel Cakes | Every Cake Tells a Story</title>
+
+<meta name="description" content="Bethel Cakes — luxury wedding and birthday cakes. Every Cake Tells a Story.">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+:root{
+    --wine:#6d1025;
+    --wine-dark:#4b0718;
+    --wine-light:#8d2941;
+    --cream:#fffaf5;
+    --cream-dark:#f4e8df;
+    --gold:#c9a45c;
+    --gold-light:#e6cc91;
+    --text:#302125;
+    --muted:#806f72;
+    --white:#ffffff;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--cream);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+
+/* ================================
+NAVIGATION
+================================ */
+
+.navbar{
+    position:fixed;
+    top:18px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:1000;
+
+    width:min(1180px,calc(100% - 30px));
+
+    padding:12px 16px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:rgba(255,250,245,.94);
+
+    border:1px solid rgba(109,16,37,.10);
+
+    border-radius:999px;
+
+    box-shadow:
+        0 18px 45px rgba(70,27,37,.12);
+
+    backdrop-filter:blur(18px);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.brand-logo{
+    width:48px;
+    height:48px;
+    object-fit:cover;
+    border-radius:16px;
+    border:1px solid rgba(201,164,92,.4);
+}
+
+.brand-name{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--wine);
+}
+
+.brand-tagline{
+    display:block;
+    margin-top:2px;
+    font-size:9px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--muted);
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.nav-link{
+    padding:11px 15px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:bold;
+    color:var(--wine);
+    transition:.2s;
+}
+
+.nav-link:hover{
+    background:var(--cream-dark);
+}
+
+.nav-cta{
+    background:var(--wine);
+    color:white;
+}
+
+.nav-cta:hover{
+    background:var(--wine-light);
+}
+
+.menu-button{
+    display:none;
+    border:0;
+    background:var(--cream-dark);
+    color:var(--wine);
+    border-radius:13px;
+    padding:10px 13px;
+}
+
+
+/* ================================
+HERO
+================================ */
+
+.hero{
+    min-height:100vh;
+
+    padding:
+        180px 30px
+        100px;
+
+    display:flex;
+    align-items:center;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(201,164,92,.25),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #fffaf5,
+            #f9eee7
+        );
+}
+
+.hero-inner{
+    width:min(1180px,100%);
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+
+    gap:60px;
+
+    align-items:center;
+}
+
+.eyebrow{
+    display:inline-block;
+
+    margin-bottom:20px;
+
+    padding:9px 14px;
+
+    border:1px solid rgba(201,164,92,.5);
+
+    border-radius:999px;
+
+    font-size:10px;
+    font-weight:bold;
+
+    letter-spacing:2px;
+    text-transform:uppercase;
+
+    color:var(--wine);
+}
+
+.hero h1{
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-weight:normal;
+
+    font-size:
+        clamp(55px,8vw,100px);
+
+    line-height:.92;
+
+    color:var(--wine);
+
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:var(--gold);
+}
+
+.hero-text{
+    max-width:590px;
+
+    font-size:16px;
+    line-height:1.85;
+
+    color:var(--muted);
+
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-height:52px;
+
+    padding:0 23px;
+
+    border-radius:16px;
+
+    font-size:13px;
+    font-weight:bold;
+
+    transition:.2s;
+}
+
+.button:hover{
+    transform:translateY(-2px);
+}
+
+.button-primary{
+    background:var(--wine);
+    color:white;
+
+    box-shadow:
+        0 15px 30px rgba(109,16,37,.18);
+}
+
+.button-secondary{
+    background:white;
+    color:var(--wine);
+
+    border:1px solid rgba(109,16,37,.12);
+}
+
+.hero-visual{
+    position:relative;
+}
+
+.hero-image-card{
+    overflow:hidden;
+
+    border-radius:45px;
+
+    background:white;
+
+    padding:10px;
+
+    box-shadow:
+        0 30px 70px rgba(70,27,37,.18);
+
+    transform:rotate(1.5deg);
+}
+
+.hero-image-card img{
+    width:100%;
+    height:590px;
+    object-fit:cover;
+
+    border-radius:37px;
+}
+
+.hero-badge{
+    position:absolute;
+
+    left:-25px;
+    bottom:35px;
+
+    padding:20px 23px;
+
+    background:var(--wine);
+
+    color:white;
+
+    border-radius:23px;
+
+    box-shadow:
+        0 20px 40px rgba(109,16,37,.25);
+}
+
+.hero-badge strong{
+    display:block;
+
+    font-family:Georgia,serif;
+
+    font-size:24px;
+
+    font-weight:normal;
+}
+
+.hero-badge span{
+    font-size:10px;
+
+    letter-spacing:1.5px;
+
+    text-transform:uppercase;
+
+    color:var(--gold-light);
+}
+
+
+/* ================================
+GENERAL SECTIONS
+================================ */
+
+.section{
+    width:min(1180px,calc(100% - 40px));
+
+    margin:auto;
+
+    padding:100px 0;
+}
+
+.section-heading{
+    max-width:700px;
+
+    margin:0 auto 45px;
+
+    text-align:center;
+}
+
+.section-heading h2{
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-size:
+        clamp(38px,5vw,60px);
+
+    font-weight:normal;
+
+    color:var(--wine);
+
+    margin:10px 0 15px;
+}
+
+.section-heading p{
+    font-size:14px;
+
+    line-height:1.8;
+
+    color:var(--muted);
+}
+
+
+/* ================================
+FEATURES
+================================ */
+
+.feature-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.feature-card{
+    padding:32px;
+
+    background:white;
+
+    border-radius:30px;
+
+    border:1px solid rgba(109,16,37,.08);
+
+    box-shadow:
+        0 18px 45px rgba(70,27,37,.07);
+}
+
+.feature-number{
+    font-family:Georgia,serif;
+
+    font-size:40px;
+
+    color:var(--gold);
+
+    margin-bottom:18px;
+}
+
+.feature-card h3{
+    font-family:Georgia,serif;
+
+    font-size:24px;
+
+    font-weight:normal;
+
+    color:var(--wine);
+
+    margin-bottom:10px;
+}
+
+.feature-card p{
+    font-size:13px;
+
+    line-height:1.75;
+
+    color:var(--muted);
+}
+
+
+/* ================================
+CAKE SHOWCASE
+================================ */
+
+.cake-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:16px;
+}
+
+.cake-card{
+    overflow:hidden;
+
+    position:relative;
+
+    height:360px;
+
+    border-radius:30px;
+
+    background:white;
+
+    box-shadow:
+        0 18px 45px rgba(70,27,37,.08);
+}
+
+.cake-card img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:
+        transform .6s ease;
+}
+
+.cake-card:hover img{
+    transform:scale(1.07);
+}
+
+.cake-overlay{
+    position:absolute;
+
+    left:15px;
+    right:15px;
+    bottom:15px;
+
+    padding:17px;
+
+    border-radius:20px;
+
+    background:
+        rgba(255,250,245,.92);
+
+    backdrop-filter:blur(12px);
+}
+
+.cake-overlay h3{
+    font-family:Georgia,serif;
+
+    font-size:20px;
+
+    font-weight:normal;
+
+    color:var(--wine);
+}
+
+.cake-overlay p{
+    font-size:10px;
+
+    color:var(--muted);
+
+    margin-top:4px;
+}
+
+.center-button{
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:35px;
+}
+
+
+/* ================================
+TASTE OF OUR GALLERY
+================================ */
+
+.taste-gallery{
+    padding:
+        100px 0
+        105px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fffaf5,
+            #f4e8df,
+            #fffaf5
+        );
+
+    overflow:hidden;
+}
+
+.taste-heading{
+    width:min(1180px,calc(100% - 40px));
+
+    margin:0 auto 45px;
+
+    text-align:center;
+}
+
+.taste-heading h2{
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-size:
+        clamp(38px,5vw,60px);
+
+    font-weight:normal;
+
+    color:var(--wine);
+
+    margin:10px 0 15px;
+}
+
+.taste-heading p{
+    max-width:650px;
+
+    margin:auto;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    color:var(--muted);
+}
+
+
+/* Moving gallery */
+
+.gallery-window{
+    position:relative;
+
+    width:100%;
+
+    overflow:hidden;
+}
+
+.gallery-window::before,
+.gallery-window::after{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    bottom:0;
+
+    width:120px;
+
+    z-index:5;
+
+    pointer-events:none;
+}
+
+.gallery-window::before{
+    left:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f4e8d5,
+            transparent
+        );
+}
+
+.gallery-window::after{
+    right:0;
+
+    background:
+        linear-gradient(
+            270deg,
+            #f4e8df,
+            transparent
+        );
+}
+
+.gallery-track{
+    display:flex;
+
+    width:max-content;
+
+    gap:18px;
+
+    animation:
+        galleryMove 55s linear infinite;
+}
+
+.gallery-track:hover{
+    animation-play-state:paused;
+}
+
+.gallery-item{
+    width:240px;
+    height:300px;
+
+    flex-shrink:0;
+
+    padding:7px;
+
+    border-radius:30px;
+
+    background:white;
+
+    box-shadow:
+        0 18px 45px rgba(70,27,37,.12);
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:24px;
+
+    transition:
+        transform .5s ease;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.05);
+}
+
+@keyframes galleryMove{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}
+
+
+/* ================================
+ABOUT
+================================ */
+
+.about-section{
+    background:
+        linear-gradient(
+            135deg,
+            var(--wine-dark),
+            var(--wine)
+        );
+
+    color:white;
+
+    padding:100px 0;
+}
+
+.about-inner{
+    width:min(1180px,calc(100% - 40px));
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        .9fr 1.1fr;
+
+    gap:60px;
+
+    align-items:center;
+}
+
+.about-image{
+    overflow:hidden;
+
+    border-radius:40px;
+}
+
+.about-image img{
+    width:100%;
+
+    height:520px;
+
+    object-fit:cover;
+}
+
+.about-copy .eyebrow{
+    color:var(--gold-light);
+
+    border-color:
+        rgba(230,204,145,.35);
+}
+
+.about-copy h2{
+    font-family:Georgia,serif;
+
+    font-weight:normal;
+
+    font-size:
+        clamp(40px,5vw,65px);
+
+    line-height:1;
+
+    margin:10px 0 20px;
+}
+
+.about-copy p{
+    color:rgba(255,255,255,.75);
+
+    font-size:14px;
+
+    line-height:1.9;
+
+    margin-bottom:25px;
+}
+
+
+/* ================================
+REVIEWS
+================================ */
+
+.reviews-section{
+    width:min(1180px,calc(100% - 40px));
+
+    margin:auto;
+
+    padding:100px 0;
+}
+
+.reviews-preview{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.homepage-review{
+    position:relative;
+
+    padding:32px;
+
+    background:white;
+
+    border-radius:30px;
+
+    border:1px solid rgba(109,16,37,.08);
+
+    box-shadow:
+        0 18px 45px rgba(70,27,37,.08);
+}
+
+.homepage-review::before{
+    content:"“";
+
+    position:absolute;
+
+    right:22px;
+    top:10px;
+
+    font-family:Georgia,serif;
+
+    font-size:70px;
+
+    color:rgba(201,164,92,.2);
+}
+
+.homepage-stars{
+    color:var(--gold);
+
+    letter-spacing:3px;
+
+    margin-bottom:18px;
+}
+
+.homepage-review p{
+    font-family:Georgia,serif;
+
+    font-size:16px;
+
+    line-height:1.75;
+
+    color:#49383c;
+
+    margin-bottom:22px;
+}
+
+.homepage-review-name{
+    font-size:12px;
+
+    font-weight:bold;
+
+    color:var(--wine);
+}
+
+.review-loading,
+.review-empty{
+    grid-column:1/-1;
+
+    padding:50px;
+
+    text-align:center;
+
+    border-radius:30px;
+
+    background:var(--cream-dark);
+
+    color:var(--muted);
+}
+
+.review-empty h3{
+    font-family:Georgia,serif;
+
+    font-size:28px;
+
+    font-weight:normal;
+
+    color:var(--wine);
+
+    margin-bottom:10px;
+}
+
+.review-empty p{
+    margin-bottom:20px;
+}
+
+
+/* ================================
+ORDER CTA
+================================ */
+
+.order-section{
+    width:min(1180px,calc(100% - 40px));
+
+    margin:auto;
+
+    padding-bottom:100px;
+}
+
+.order-box{
+    padding:65px 45px;
+
+    text-align:center;
+
+    border-radius:40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f3e1d9,
+            #fffaf5
+        );
+
+    border:1px solid rgba(109,16,37,.08);
+}
+
+.order-box h2{
+    font-family:Georgia,serif;
+
+    font-size:
+        clamp(38px,5vw,58px);
+
+    font-weight:normal;
+
+    color:var(--wine);
+
+    margin-bottom:14px;
+}
+
+.order-box p{
+    max-width:600px;
+
+    margin:0 auto 28px;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    color:var(--muted);
+}
+
+
+/* ================================
+CONTACT
+================================ */
+
+.contact-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.contact-card{
+    padding:30px;
+
+    background:white;
+
+    border-radius:28px;
+
+    border:1px solid rgba(109,16,37,.08);
+
+    box-shadow:
+        0 18px 45px rgba(70,27,37,.07);
+}
+
+.contact-card h3{
+    font-family:Georgia,serif;
+
+    font-weight:normal;
+
+    font-size:23px;
+
+    color:var(--wine);
+
+    margin-bottom:10px;
+}
+
+.contact-card p{
+    font-size:13px;
+
+    line-height:1.7;
+
+    color:var(--muted);
+}
+
+.contact-card a{
+    color:var(--wine);
+
+    font-weight:bold;
+}
+
+
+/* ================================
+FOOTER
+================================ */
+
+footer{
+    padding:
+        50px 20px
+        30px;
+
+    background:var(--wine-dark);
+
+    color:white;
+
+    text-align:center;
+}
+
+.footer-logo{
+    width:60px;
+    height:60px;
+
+    object-fit:cover;
+
+    margin:0 auto 15px;
+
+    border-radius:20px;
+}
+
+.footer-name{
+    font-family:Georgia,serif;
+
+    font-size:25px;
+
+    margin-bottom:6px;
+}
+
+.footer-tagline{
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    color:var(--gold-light);
+
+    margin-bottom:20px;
+}
+
+.footer-links{
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    margin-bottom:25px;
+}
+
+.footer-links a{
+    font-size:12px;
+
+    color:rgba(255,255,255,.72);
+}
+
+.copyright{
+    font-size:10px;
+
+    color:rgba(255,255,255,.45);
+}
+
+
+/* ================================
+WHATSAPP
+================================ */
+
+.whatsapp{
+    position:fixed;
+
+    right:22px;
+    bottom:22px;
+
+    z-index:900;
+
+    padding:15px 20px;
+
+    border-radius:999px;
+
+    background:var(--wine);
+
+    color:white;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    box-shadow:
+        0 15px 35px rgba(109,16,37,.28);
+}
+
+
+/* ================================
+RESPONSIVE
+================================ */
+
+@media(max-width:950px){
+
+    .hero-inner,
+    .about-inner{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding-top:150px;
+    }
+
+    .hero-image-card img{
+        height:500px;
+    }
+
+    .feature-grid,
+    .reviews-preview{
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .cake-grid{
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    .navbar{
+        top:10px;
+
+        width:
+            calc(100% - 20px);
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .menu-button{
+        display:block;
+    }
+
+    .hero{
+        padding:
+            135px 20px
+            70px;
+    }
+
+    .hero h1{
+        font-size:55px;
+    }
+
+    .hero-image-card img{
+        height:420px;
+    }
+
+    .hero-badge{
+        left:10px;
+        bottom:20px;
+    }
+
+    .section,
+    .reviews-section,
+    .order-section{
+        width:
+            calc(100% - 30px);
+
+        padding-top:70px;
+        padding-bottom:70px;
+    }
+
+    .feature-grid,
+    .reviews-preview,
+    .cake-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cake-card{
+        height:420px;
+    }
+
+    .taste-gallery{
+        padding:
+            75px 0
+            80px;
+    }
+
+    .taste-heading{
+        width:
+            calc(100% - 30px);
+    }
+
+    .taste-heading h2{
+        font-size:45px;
+    }
+
+    .gallery-item{
+        width:205px;
+        height:270px;
+    }
+
+    .gallery-track{
+        gap:14px;
+
+        animation-duration:40s;
+    }
+
+    .gallery-window::before,
+    .gallery-window::after{
+        width:45px;
+    }
+
+    .about-inner{
+        width:
+            calc(100% - 30px);
+    }
+
+    .about-image img{
+        height:400px;
+    }
+
+    .order-box{
+        padding:
+            45px 22px;
+    }
+
+    .whatsapp{
+        right:15px;
+        bottom:15px;
+
+        padding:13px 16px;
+
+        font-size:10px;
+    }
+
+}
+
+
+/* ================================
+REDUCED MOTION
+================================ */
+
+@media(prefers-reduced-motion:reduce){
+
+    html{
+        scroll-behavior:auto;
+    }
+
+    .gallery-track{
+        animation:none;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================================
+NAVIGATION
+================================ -->
+
+<nav class="navbar">
+
+<a href="index.html" class="brand">
+
+<img
+class="brand-logo"
+src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2009.08.24%20(1).jpeg"
+alt="Bethel Cakes logo"
+>
+
+<div>
+
+<div class="brand-name">
+Bethel Cakes
+</div>
+
+<span class="brand-tagline">
+Every Cake Tells a Story
+</span>
+
+</div>
+
+</a>
+
+
+<div class="nav-links">
+
+<a href="#cakes" class="nav-link">
+Cakes
+</a>
+
+<a href="gallery.html" class="nav-link">
+Gallery
+</a>
+
+<a href="#about" class="nav-link">
+About
+</a>
+
+<a href="reviews.html" class="nav-link">
+Reviews
+</a>
+
+<a
+href="login.html"
+class="nav-link nav-cta"
+id="accountLink"
+>
+My Account
+</a>
+
+</div>
+
+
+<button
+class="menu-button"
+onclick="toggleMenu()"
+>
+Menu
+</button>
+
+</nav>
+
+
+<!-- ================================
+HERO
+================================ -->
+
+<header class="hero">
+
+<div class="hero-inner">
+
+<div>
+
+<span class="eyebrow">
+Luxury Cakes • Special Moments
+</span>
+
+<h1>
+Every Cake
+<span>
+Tells a Story.
+</span>
+</h1>
+
+<p class="hero-text">
+At Bethel Cakes, every celebration deserves something
+beautiful. From elegant wedding cakes to unforgettable
+birthday creations, we create cakes designed to become
+part of your most special memories.
+</p>
+
+<div class="hero-buttons">
+
+<a
+href="gallery.html"
+class="button button-primary"
+>
+Explore Our Cakes
+</a>
+
+<a
+href="https://wa.me/27611554022"
+class="button button-secondary"
+>
+Order on WhatsApp
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-visual">
+
+<div class="hero-image-card">
+
+<img
+src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.13.50%20(2).jpeg"
+alt="Bethel Cakes wedding cake"
+>
+
+</div>
+
+<div class="hero-badge">
+
+<strong>
+Made With Care
+</strong>
+
+<span>
+Every Cake Tells a Story
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- ================================
+FEATURES
+================================ -->
+
+<section class="section">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+The Bethel Cakes Experience
+</span>
+
+<h2>
+Made for moments
+worth remembering.
+</h2>
+
+<p>
+Beautiful designs, carefully made cakes and a personal
+touch for celebrations of every kind.
+</p>
+
+</div>
+
+
+<div class="feature-grid">
+
+<div class="feature-card">
+
+<div class="feature-number">
+01
+</div>
+
+<h3>
+Beautiful Design
+</h3>
+
+<p>
+We create elegant cakes that look as incredible as
+the celebration they are made for.
+</p>
+
+</div>
+
+
+<div class="feature-card">
+
+<div class="feature-number">
+02
+</div>
+
+<h3>
+Made With Care
+</h3>
+
+<p>
+Every cake is prepared with attention to detail,
+from the first design idea to the finished creation.
+</p>
+
+</div>
+
+
+<div class="feature-card">
+
+<div class="feature-number">
+03
+</div>
+
+<h3>
+Your Story
+</h3>
+
+<p>
+Your celebration is unique, and your cake should
+reflect the moment you are celebrating.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================
+CAKE SHOWCASE
+================================ -->
+
+<section class="section" id="cakes">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+Our Creations
+</span>
+
+<h2>
+Birthday & Wedding Cakes
+</h2>
+
+<p>
+A selection of our cakes. Explore the complete collection
+in the Bethel Cakes gallery.
+</p>
+
+</div>
+
+
+<div class="cake-grid">
+
+
+<div class="cake-card">
+
+<img
+src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.41.jpeg"
+alt="Bethel Cakes birthday cake"
+loading="lazy"
+>
+
+<div class="cake-overlay">
+
+<h3>
+Birthday Cakes
+</h3>
+
+<p>
+Made for unforgettable celebrations
+</p>
+
+</div>
+
+</div>
+
+
+<div class="cake-card">
+
+<img
+src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.42%20(1).jpeg"
+alt="Bethel Cakes birthday cake"
+loading="lazy"
+>
+
+<div class="cake-overlay">
+
+<h3>
+Celebration Cakes
+</h3>
+
+<p>
+Designed around your special moment
+</p>
+
+</div>
+
+</div>
+
+
+<div class="cake-card">
+
+<img
+src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.43%20(1).jpeg"
+alt="Bethel Cakes birthday cake"
+loading="lazy"
+>
+
+<div class="cake-overlay">
+
+<h3>
+Custom Creations
+</h3>
+
+<p>
+Unique designs for every celebration
+</p>
+
+</div>
+
+</div>
+
+
+<div class="cake-card">
+
+<img
+src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.13.50.jpeg"
+alt="Bethel Cakes wedding cake"
+loading="lazy"
+>
+
+<div class="cake-overlay">
+
+<h3>
+Wedding Cakes
+</h3>
+
+<p>
+Elegant cakes for your special day
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="center-button">
+
+<a
+href="gallery.html"
+class="button button-primary"
+>
+View Full Gallery
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ================================
+TASTE OF OUR GALLERY
+================================ -->
+
+<section class="taste-gallery">
+
+<div class="taste-heading">
+
+<span class="eyebrow">
+A Taste of Our Gallery
+</span>
+
+<h2>
+A little taste of what we create.
+</h2>
+
+<p>
+From birthday celebrations to elegant weddings, explore
+a moving glimpse of the Bethel Cakes collection.
+</p>
+
+</div>
+
+
+<div class="gallery-window">
+
+<div class="gallery-track">
+
+
+<!-- FIRST SET -->
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.13.50%20(1).jpeg" alt="Wedding cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.13.50%20(2).jpeg" alt="Wedding cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.13.50.jpeg" alt="Wedding cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.17.00.jpeg" alt="Wedding cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.41.jpeg" alt="Birthday cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.42%20(1).jpeg" alt="Birthday cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.42%20(2).jpeg" alt="Birthday cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.42.jpeg" alt="Birthday cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.43%20(1).jpeg" alt="Birthday cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.43.jpeg" alt="Birthday cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.44%20(1).jpeg" alt="Birthday cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.44.jpeg" alt="Birthday cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.45%20(1).jpeg" alt="Birthday cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.45%20(2).jpeg" alt="Birthday cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.45%20(3).jpeg" alt="Birthday cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.45.jpeg" alt="Birthday cake">
+</div>
+
+
+<!-- SECOND SET FOR SEAMLESS LOOP -->
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.13.50%20(1).jpeg" alt="Wedding cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.13.50%20(2).jpeg" alt="Wedding cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.13.50.jpeg" alt="Wedding cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.17.00.jpeg" alt="Wedding cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.41.jpeg" alt="Birthday cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.42%20(1).jpeg" alt="Birthday cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.42%20(2).jpeg" alt="Birthday cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.42.jpeg" alt="Birthday cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.43%20(1).jpeg" alt="Birthday cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.43.jpeg" alt="Birthday cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.44%20(1).jpeg" alt="Birthday cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.44.jpeg" alt="Birthday cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.45%20(1).jpeg" alt="Birthday cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.45%20(2).jpeg" alt="Birthday cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.45%20(3).jpeg" alt="Birthday cake">
+</div>
+
+<div class="gallery-item">
+<img src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.14.45.jpeg" alt="Birthday cake">
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="center-button">
+
+<a
+href="gallery.html"
+class="button button-primary"
+>
+Explore the Full Gallery
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ================================
+ABOUT
+================================ -->
+
+<section class="about-section" id="about">
+
+<div class="about-inner">
+
+<div class="about-image">
+
+<img
+src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2010.17.00.jpeg"
+alt="Bethel Cakes wedding cake"
+loading="lazy"
+>
+
+</div>
+
+
+<div class="about-copy">
+
+<span class="eyebrow">
+About Bethel Cakes
+</span>
+
+<h2>
+More than a cake.
+</h2>
+
+<p>
+A cake becomes part of the memories people keep.
+That is why Bethel Cakes focuses on creating beautiful,
+thoughtful cakes for the moments that matter most.
+</p>
+
+<p>
+Whether you are celebrating a birthday, wedding,
+milestone or another special occasion, we want your
+cake to feel as memorable as the day itself.
+</p>
+
+<a
+href="https://wa.me/27611554022"
+class="button button-secondary"
+>
+Talk to Bethel Cakes
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================
+REVIEWS
+================================ -->
+
+<section class="reviews-section" id="reviews">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+Customer Stories
+</span>
+
+<h2>
+What Our Customers Say
+</h2>
+
+<p>
+Real experiences from customers who celebrated
+their special moments with Bethel Cakes.
+</p>
+
+</div>
+
+
+<div
+class="reviews-preview"
+id="homepageReviews"
+>
+
+<div class="review-loading">
+Loading customer stories...
+</div>
+
+</div>
+
+
+<div class="center-button">
+
+<a
+href="reviews.html"
+class="button button-primary"
+>
+View All Reviews
+</a>
+
+<a
+href="login.html"
+class="button button-secondary"
+>
+Write a Review
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ================================
+ORDER
+================================ -->
+
+<section class="order-section">
+
+<div class="order-box">
+
+<span class="eyebrow">
+Start Your Story
+</span>
+
+<h2>
+Let's create something special.
+</h2>
+
+<p>
+Tell us about your celebration and the cake you have
+in mind. All cake orders are handled directly through
+WhatsApp for a personal ordering experience.
+</p>
+
+<a
+href="https://wa.me/27611554022?text=Hello%20Bethel%20Cakes%2C%20I%20would%20like%20to%20enquire%20about%20a%20cake."
+class="button button-primary"
+>
+Order Through WhatsApp
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ================================
+CONTACT
+================================ -->
+
+<section class="section">
+
+<div class="section-heading">
+
+<span class="eyebrow">
+Get In Touch
+</span>
+
+<h2>
+Let's talk cake.
+</h2>
+
+<p>
+Have a question or want to discuss your celebration?
+Contact Bethel Cakes directly.
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+<div class="contact-card">
+
+<h3>
+WhatsApp
+</h3>
+
+<p>
+Speak directly with Bethel Cakes about your
+cake requirements.
+</p>
+
+<br>
+
+<a href="https://wa.me/27611554022">
+061 155 4022
+</a>
+
+</div>
+
+
+<div class="contact-card">
+
+<h3>
+Call Us
+</h3>
+
+<p>
+Prefer to speak on the phone? Give us a call
+about your celebration.
+</p>
+
+<br>
+
+<a href="tel:0611554022">
+061 155 4022
+</a>
+
+</div>
+
+
+<div class="contact-card">
+
+<h3>
+Find Us
+</h3>
+
+<p>
+View our location and get directions through
+Google Maps.
+</p>
+
+<br>
+
+<a
+href="https://maps.app.goo.gl/oEKR9ovDCus6sSZdA"
+target="_blank"
+>
+Open Google Maps
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================
+FOOTER
+================================ -->
+
+<footer>
+
+<img
+class="footer-logo"
+src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2009.08.24%20(1).jpeg"
+alt="Bethel Cakes"
+>
+
+<div class="footer-name">
+Bethel Cakes
+</div>
+
+<div class="footer-tagline">
+Every Cake Tells a Story
+</div>
+
+
+<div class="footer-links">
+
+<a href="index.html">
+Home
+</a>
+
+<a href="gallery.html">
+Gallery
+</a>
+
+<a href="reviews.html">
+Reviews
+</a>
+
+<a href="login.html">
+My Account
+</a>
+
+<a href="https://wa.me/27611554022">
+WhatsApp
+</a>
+
+</div>
+
+
+<div class="copyright">
+© 2026 Bethel Cakes. All rights reserved.
+</div>
+
+</footer>
+
+
+<!-- ================================
+WHATSAPP
+================================ -->
+
+<a
+href="https://wa.me/27611554022"
+class="whatsapp"
+>
+WhatsApp Bethel Cakes
+</a>
+
+
+<script>
+
+/* ================================
+MOBILE MENU
+================================ */
+
+function toggleMenu(){
+
+const links =
+document.querySelector(".nav-links");
+
+if(
+links.style.display === "flex"
+){
+
+links.style.display="none";
+
+}else{
+
+links.style.display="flex";
+
+links.style.position="absolute";
+
+links.style.top="75px";
+
+links.style.right="0";
+
+links.style.flexDirection="column";
+
+links.style.alignItems="stretch";
+
+links.style.padding="12px";
+
+links.style.background="#fffaf5";
+
+links.style.borderRadius="25px";
+
+links.style.boxShadow=
+"0 18px 45px rgba(70,27,37,.15)";
+
+}
+
+}
+
+
+/* ================================
+ACCOUNT STATE
+================================ */
+
+async function loadAccountState(){
+
+const accountLink =
+document.getElementById(
+"accountLink"
+);
+
+try{
+
+const response =
+await fetch("/api/me");
+
+const data =
+await response.json();
+
+if(
+data.loggedIn &&
+data.user
+){
+
+accountLink.textContent =
+"My Account";
+
+accountLink.href =
+"account.html";
+
+}
+
+}catch(error){
+
+}
+
+}
+
+
+/* ================================
+ESCAPE HTML
+================================ */
+
+function escapeHtml(value){
+
+return String(
+value || ""
+).replace(
+/[&<>"']/g,
+character=>{
+
+const map={
+"&":"&amp;",
+"<":"&lt;",
+">":"&gt;",
+'"':"&quot;",
+"'":"&#039;"
+};
+
+return map[character];
+
+}
+);
+
+}
+
+
+/* ================================
+LOAD REVIEWS
+================================ */
+
+async function loadHomepageReviews(){
+
+const container =
+document.getElementById(
+"homepageReviews"
+);
+
+try{
+
+const response =
+await fetch("/api/reviews");
+
+const data =
+await response.json();
+
+if(!response.ok){
+
+throw new Error(
+"Could not load reviews."
+);
+
+}
+
+const reviews =
+Array.isArray(data.reviews)
+?
+data.reviews
+:
+[];
+
+
+if(!reviews.length){
+
+container.innerHTML = `
+
+<div class="review-empty">
+
+<h3>
+Your story could be here.
+</h3>
+
+<p>
+Be one of the first customers
+to share your Bethel Cakes experience.
+</p>
+
+<a
+href="login.html"
+class="button button-primary"
+>
+Write a Review
+</a>
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+container.innerHTML =
+reviews
+.slice(0,3)
+.map(review=>{
+
+const rating =
+Math.max(
+1,
+Math.min(
+5,
+Number(review.rating)
+)
+);
+
+const stars =
+"★".repeat(rating);
+
+const name =
+escapeHtml(
+review.name ||
+"Bethel Cakes Customer"
+);
+
+const text =
+escapeHtml(
+review.text ||
+""
+);
+
+return `
+
+<article class="homepage-review">
+
+<div class="homepage-stars">
+${stars}
+</div>
+
+<p>
+“${text}”
+</p>
+
+<div class="homepage-review-name">
+${name}
+</div>
+
+</article>
+
+`;
+
+})
+.join("");
+
+
+}catch(error){
+
+container.innerHTML = `
+
+<div class="review-empty">
+
+<h3>
+Customer Stories
+</h3>
+
+<p>
+Visit our reviews page to see
+what customers are saying.
+</p>
+
+<a
+href="reviews.html"
+class="button button-primary"
+>
+View Reviews
+</a>
+
+</div>
+
+`;
+
+}
+
+}
+
+
+/* ================================
+START
+================================ */
+
+loadAccountState();
+
+loadHomepageReviews();
+
+</script>
+
+</body>
+</html>
+

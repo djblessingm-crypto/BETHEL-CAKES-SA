@@ -1,0 +1,3240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gallery | Bethel Cakes</title>
+
+<meta name="description" content="Explore the Bethel Cakes luxury cake gallery. Discover our birthday and wedding cake creations.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   BETHEL CAKES — LUXURY GALLERY
+   ========================================================= */
+
+:root{
+    --wine:#5a0710;
+    --wine-dark:#390308;
+    --wine-light:#7c1822;
+
+    --cream:#fffaf2;
+    --cream-dark:#f6eee1;
+
+    --gold:#c9a15a;
+    --gold-light:#e3c98d;
+
+    --text:#27191a;
+    --muted:#766667;
+
+    --white:#ffffff;
+
+    --shadow:0 20px 60px rgba(57,3,8,.12);
+    --shadow-soft:0 12px 35px rgba(57,3,8,.09);
+
+    --radius-xl:42px;
+    --radius-lg:30px;
+    --radius-md:22px;
+    --radius-sm:16px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:var(--cream);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    font-family:inherit;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+::selection{
+    background:var(--wine);
+    color:white;
+}
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.topbar{
+    margin:0 18px;
+    padding:11px 20px;
+
+    background:var(--wine);
+    color:white;
+
+    text-align:center;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+
+    border-radius:0 0 28px 28px;
+
+    position:relative;
+    z-index:1001;
+
+    box-shadow:0 10px 30px rgba(57,3,8,.12);
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    padding:18px 30px;
+
+    background:rgba(255,250,242,.91);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(201,161,90,.14);
+}
+
+.nav-inner{
+    max-width:1380px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.brand-logo{
+    width:64px;
+    height:52px;
+
+    object-fit:cover;
+
+    border-radius:16px;
+
+    box-shadow:0 8px 22px rgba(57,3,8,.12);
+
+    background:white;
+}
+
+.brand-text{
+    display:flex;
+    flex-direction:column;
+}
+
+.brand-name{
+    font-family:"Cormorant Garamond",serif;
+    color:var(--wine);
+    font-size:27px;
+    line-height:1;
+    font-weight:700;
+}
+
+.brand-tagline{
+    margin-top:4px;
+
+    color:var(--gold);
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:7px;
+
+    padding:7px;
+
+    background:white;
+
+    border:1px solid rgba(201,161,90,.15);
+    border-radius:999px;
+
+    box-shadow:0 8px 28px rgba(57,3,8,.06);
+}
+
+.nav-links a{
+    padding:11px 18px;
+
+    border-radius:999px;
+
+    color:#624e4f;
+
+    font-size:13px;
+    font-weight:600;
+
+    transition:.3s ease;
+}
+
+.nav-links a:hover{
+    background:var(--cream-dark);
+    color:var(--wine);
+}
+
+.nav-links a.active{
+    background:var(--wine);
+    color:white;
+
+    box-shadow:0 8px 20px rgba(90,7,16,.2);
+}
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.account-btn{
+    padding:12px 19px;
+
+    border:1px solid rgba(201,161,90,.35);
+    border-radius:999px;
+
+    background:white;
+    color:var(--wine);
+
+    font-size:12px;
+    font-weight:700;
+
+    transition:.3s ease;
+}
+
+.account-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:var(--shadow-soft);
+}
+
+.mobile-menu{
+    display:none;
+
+    width:45px;
+    height:45px;
+
+    border:0;
+    border-radius:50%;
+
+    background:var(--wine);
+    color:white;
+
+    cursor:pointer;
+
+    font-size:20px;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+
+    padding:95px 25px 105px;
+
+    background:
+        radial-gradient(circle at 10% 20%,rgba(201,161,90,.15),transparent 30%),
+        radial-gradient(circle at 90% 80%,rgba(124,24,34,.1),transparent 35%),
+        var(--cream);
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+
+    width:430px;
+    height:430px;
+
+    right:-170px;
+    top:-180px;
+
+    border:1px solid rgba(201,161,90,.2);
+    border-radius:50%;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    left:-150px;
+    bottom:-180px;
+
+    border:1px solid rgba(90,7,16,.1);
+    border-radius:50%;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    max-width:1000px;
+    margin:auto;
+
+    text-align:center;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    color:var(--gold);
+
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.eyebrow::before,
+.eyebrow::after{
+    content:"";
+    width:34px;
+    height:1px;
+
+    background:var(--gold);
+}
+
+.hero h1{
+    margin-top:20px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    color:var(--wine);
+
+    font-size:clamp(58px,9vw,110px);
+    line-height:.85;
+    font-weight:600;
+
+    letter-spacing:-3px;
+}
+
+.hero h1 span{
+    color:var(--gold);
+    font-style:italic;
+}
+
+.hero-description{
+    max-width:650px;
+    margin:30px auto 0;
+
+    color:var(--muted);
+
+    font-size:15px;
+    line-height:1.8;
+}
+
+.hero-actions{
+    margin-top:35px;
+
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.primary-btn,
+.secondary-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-height:50px;
+
+    padding:0 25px;
+
+    border-radius:999px;
+
+    font-size:12px;
+    font-weight:700;
+
+    transition:.3s ease;
+}
+
+.primary-btn{
+    background:var(--wine);
+    color:white;
+
+    box-shadow:0 12px 30px rgba(90,7,16,.2);
+}
+
+.primary-btn:hover{
+    background:var(--wine-light);
+    transform:translateY(-3px);
+}
+
+.secondary-btn{
+    background:white;
+    color:var(--wine);
+
+    border:1px solid rgba(201,161,90,.35);
+}
+
+.secondary-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:var(--shadow-soft);
+}
+
+/* =========================================================
+   GOLD DIVIDER
+   ========================================================= */
+
+.gold-divider{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+
+    margin:0 auto;
+
+    max-width:500px;
+}
+
+.gold-divider span{
+    height:1px;
+    flex:1;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(201,161,90,.7)
+    );
+}
+
+.gold-divider span:last-child{
+    background:linear-gradient(
+        90deg,
+        rgba(201,161,90,.7),
+        transparent
+    );
+}
+
+.gold-divider i{
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--gold);
+}
+
+/* =========================================================
+   GALLERY SECTION
+   ========================================================= */
+
+.gallery-section{
+    padding:90px 25px 120px;
+
+    background:white;
+
+    position:relative;
+}
+
+.gallery-container{
+    max-width:1400px;
+    margin:auto;
+}
+
+.section-heading{
+    text-align:center;
+
+    max-width:760px;
+    margin:0 auto 55px;
+}
+
+.section-kicker{
+    color:var(--gold);
+
+    font-size:10px;
+    font-weight:700;
+
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.section-heading h2{
+    margin-top:12px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    color:var(--wine);
+
+    font-size:clamp(42px,5vw,68px);
+    line-height:.95;
+    font-weight:600;
+}
+
+.section-heading p{
+    margin-top:18px;
+
+    color:var(--muted);
+
+    font-size:14px;
+    line-height:1.8;
+}
+
+/* =========================================================
+   FILTERS
+   ========================================================= */
+
+.filters{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:9px;
+
+    margin-bottom:55px;
+}
+
+.filter-btn{
+    padding:12px 22px;
+
+    border:1px solid rgba(201,161,90,.25);
+    border-radius:999px;
+
+    background:var(--cream);
+    color:#624e4f;
+
+    font-size:11px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+}
+
+.filter-btn:hover{
+    color:var(--wine);
+    border-color:var(--gold-light);
+
+    transform:translateY(-2px);
+}
+
+.filter-btn.active{
+    background:var(--wine);
+    color:white;
+
+    border-color:var(--wine);
+
+    box-shadow:0 10px 25px rgba(90,7,16,.18);
+}
+
+/* =========================================================
+   FEATURED MOVING STRIP
+   ========================================================= */
+
+.gallery-moving{
+    overflow:hidden;
+
+    margin:0 -25px 70px;
+
+    padding:20px 0;
+
+    position:relative;
+}
+
+.gallery-moving::before,
+.gallery-moving::after{
+    content:"";
+
+    position:absolute;
+    top:0;
+    bottom:0;
+
+    width:120px;
+
+    z-index:3;
+
+    pointer-events:none;
+}
+
+.gallery-moving::before{
+    left:0;
+
+    background:linear-gradient(
+        90deg,
+        white,
+        transparent
+    );
+}
+
+.gallery-moving::after{
+    right:0;
+
+    background:linear-gradient(
+        270deg,
+        white,
+        transparent
+    );
+}
+
+.moving-track{
+    display:flex;
+    width:max-content;
+
+    gap:20px;
+
+    animation:galleryMove 42s linear infinite;
+}
+
+.moving-track:hover{
+    animation-play-state:paused;
+}
+
+.moving-card{
+    width:270px;
+    height:190px;
+
+    flex:0 0 270px;
+
+    overflow:hidden;
+
+    border-radius:28px;
+
+    background:var(--cream);
+
+    box-shadow:0 14px 40px rgba(57,3,8,.12);
+
+    border:1px solid rgba(201,161,90,.15);
+}
+
+.moving-card img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:transform .6s ease;
+}
+
+.moving-card:hover img{
+    transform:scale(1.07);
+}
+
+@keyframes galleryMove{
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+}
+
+/* =========================================================
+   MAIN GALLERY GRID
+   ========================================================= */
+
+.gallery-grid{
+    columns:4 280px;
+    column-gap:22px;
+}
+
+.gallery-item{
+    break-inside:avoid;
+
+    margin-bottom:22px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:28px;
+
+    background:var(--cream);
+
+    border:1px solid rgba(201,161,90,.13);
+
+    box-shadow:0 10px 35px rgba(57,3,8,.07);
+
+    cursor:pointer;
+
+    transform:translateZ(0);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease,
+        opacity .35s ease;
+}
+
+.gallery-item:hover{
+    transform:translateY(-7px);
+
+    box-shadow:0 25px 55px rgba(57,3,8,.16);
+}
+
+.gallery-item img{
+    width:100%;
+    height:auto;
+
+    min-height:220px;
+
+    object-fit:cover;
+
+    transition:transform .7s cubic-bezier(.2,.7,.2,1);
+}
+
+.gallery-item:hover img{
+    transform:scale(1.06);
+}
+
+.gallery-overlay{
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+    align-items:flex-end;
+
+    padding:22px;
+
+    background:linear-gradient(
+        to top,
+        rgba(57,3,8,.72),
+        rgba(57,3,8,.08) 55%,
+        transparent
+    );
+
+    opacity:0;
+
+    transition:.4s ease;
+}
+
+.gallery-item:hover .gallery-overlay{
+    opacity:1;
+}
+
+.gallery-overlay-content{
+    color:white;
+}
+
+.gallery-overlay-title{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:26px;
+    line-height:1;
+
+    font-weight:600;
+}
+
+.gallery-overlay-category{
+    margin-top:5px;
+
+    color:var(--gold-light);
+
+    font-size:9px;
+    font-weight:700;
+
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-state{
+    display:none;
+
+    padding:70px 25px;
+
+    text-align:center;
+
+    background:var(--cream);
+
+    border-radius:35px;
+}
+
+.empty-state h3{
+    font-family:"Cormorant Garamond",serif;
+
+    color:var(--wine);
+
+    font-size:35px;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.cta-section{
+    padding:30px 25px 110px;
+
+    background:white;
+}
+
+.cta{
+    max-width:1200px;
+    margin:auto;
+
+    position:relative;
+    overflow:hidden;
+
+    padding:75px 50px;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(201,161,90,.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            var(--wine-dark),
+            var(--wine)
+        );
+
+    color:white;
+
+    border-radius:42px;
+
+    box-shadow:0 30px 80px rgba(57,3,8,.22);
+
+    text-align:center;
+}
+
+.cta::before{
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    right:-130px;
+    bottom:-160px;
+
+    border:1px solid rgba(227,201,141,.3);
+
+    border-radius:50%;
+}
+
+.cta::after{
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    left:-80px;
+    top:-90px;
+
+    border:1px solid rgba(227,201,141,.2);
+
+    border-radius:50%;
+}
+
+.cta-content{
+    position:relative;
+    z-index:2;
+}
+
+.cta-kicker{
+    color:var(--gold-light);
+
+    font-size:10px;
+    font-weight:700;
+
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.cta h2{
+    margin-top:12px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(42px,5vw,65px);
+
+    line-height:.95;
+}
+
+.cta p{
+    max-width:600px;
+
+    margin:20px auto 30px;
+
+    color:rgba(255,255,255,.72);
+
+    font-size:14px;
+    line-height:1.8;
+}
+
+.cta-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.cta .primary-btn{
+    background:white;
+    color:var(--wine);
+}
+
+.cta .secondary-btn{
+    background:transparent;
+
+    border-color:rgba(255,255,255,.3);
+
+    color:white;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer{
+    background:#2d0509;
+
+    color:white;
+
+    padding:70px 25px 30px;
+}
+
+.footer-container{
+    max-width:1250px;
+    margin:auto;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:45px;
+}
+
+.footer-brand h3{
+    font-family:"Cormorant Garamond",serif;
+
+    color:white;
+
+    font-size:38px;
+}
+
+.footer-brand p{
+    max-width:340px;
+
+    margin-top:15px;
+
+    color:rgba(255,255,255,.62);
+
+    font-size:13px;
+    line-height:1.8;
+}
+
+.footer-title{
+    color:var(--gold-light);
+
+    font-size:10px;
+    font-weight:700;
+
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+
+    margin-top:18px;
+}
+
+.footer-links a{
+    color:rgba(255,255,255,.7);
+
+    font-size:13px;
+
+    transition:.25s ease;
+}
+
+.footer-links a:hover{
+    color:white;
+    transform:translateX(3px);
+}
+
+.footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+
+    margin-top:55px;
+    padding-top:25px;
+
+    border-top:1px solid rgba(255,255,255,.1);
+
+    color:rgba(255,255,255,.42);
+
+    font-size:11px;
+}
+
+.footer-bottom a{
+    color:var(--gold-light);
+}
+
+/* =========================================================
+   WHATSAPP FLOAT
+   ========================================================= */
+
+.whatsapp-float{
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    z-index:1000;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:62px;
+    height:62px;
+
+    border-radius:50%;
+
+    background:var(--wine);
+    color:white;
+
+    border:4px solid var(--cream);
+
+    box-shadow:0 15px 35px rgba(57,3,8,.25);
+
+    font-size:12px;
+    font-weight:700;
+
+    transition:.3s ease;
+}
+
+.whatsapp-float:hover{
+    transform:translateY(-5px) scale(1.04);
+
+    background:var(--wine-light);
+}
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+
+.lightbox{
+    position:fixed;
+
+    inset:0;
+
+    z-index:5000;
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    padding:30px;
+
+    background:rgba(25,2,5,.94);
+
+    backdrop-filter:blur(15px);
+}
+
+.lightbox.show{
+    display:flex;
+}
+
+.lightbox-content{
+    max-width:1100px;
+    max-height:90vh;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.lightbox-image{
+    max-width:min(100%,1000px);
+    max-height:82vh;
+
+    object-fit:contain;
+
+    border-radius:30px;
+
+    box-shadow:0 30px 100px rgba(0,0,0,.5);
+}
+
+.lightbox-close{
+    position:fixed;
+
+    top:25px;
+    right:30px;
+
+    width:50px;
+    height:50px;
+
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    font-size:25px;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+}
+
+.lightbox-close:hover{
+    background:white;
+    color:var(--wine);
+}
+
+.lightbox-prev,
+.lightbox-next{
+    position:fixed;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:54px;
+    height:54px;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+}
+
+.lightbox-prev{
+    left:25px;
+}
+
+.lightbox-next{
+    right:25px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover{
+    background:white;
+    color:var(--wine);
+}
+
+.lightbox-caption{
+    position:fixed;
+
+    bottom:25px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:white;
+
+    text-align:center;
+
+    font-size:12px;
+    letter-spacing:1px;
+}
+
+/* =========================================================
+   REVEAL ANIMATION
+   ========================================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(25px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:1050px){
+
+    .nav-links{
+        gap:2px;
+    }
+
+    .nav-links a{
+        padding:10px 12px;
+        font-size:11px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:800px){
+
+    .navbar{
+        padding:14px 18px;
+    }
+
+    .brand-logo{
+        width:56px;
+        height:46px;
+    }
+
+    .brand-name{
+        font-size:24px;
+    }
+
+    .nav-links,
+    .account-btn{
+        display:none;
+    }
+
+    .mobile-menu{
+        display:block;
+    }
+
+    .nav-links.mobile-open{
+        display:flex;
+
+        position:absolute;
+
+        top:82px;
+        left:18px;
+        right:18px;
+
+        padding:10px;
+
+        flex-direction:column;
+
+        background:white;
+
+        border-radius:28px;
+
+        box-shadow:0 25px 60px rgba(57,3,8,.15);
+    }
+
+    .nav-links.mobile-open a{
+        width:100%;
+        text-align:center;
+    }
+
+    .hero{
+        padding:75px 20px 85px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .gallery-section{
+        padding:70px 18px 90px;
+    }
+
+    .gallery-moving{
+        margin-left:-18px;
+        margin-right:-18px;
+    }
+
+    .moving-card{
+        width:220px;
+        height:155px;
+        flex-basis:220px;
+    }
+
+    .gallery-grid{
+        columns:2 180px;
+        column-gap:14px;
+    }
+
+    .gallery-item{
+        margin-bottom:14px;
+        border-radius:21px;
+    }
+
+    .gallery-item img{
+        min-height:170px;
+    }
+
+    .gallery-overlay{
+        opacity:1;
+        padding:15px;
+    }
+
+    .gallery-overlay-title{
+        font-size:20px;
+    }
+
+    .cta{
+        padding:60px 25px;
+        border-radius:32px;
+    }
+
+    .footer{
+        padding:60px 20px 25px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+
+@media(max-width:520px){
+
+    .topbar{
+        margin:0 10px;
+        padding:10px;
+        font-size:8px;
+        letter-spacing:1.8px;
+    }
+
+    .brand-tagline{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:57px;
+    }
+
+    .hero-description{
+        font-size:13px;
+    }
+
+    .section-heading h2{
+        font-size:45px;
+    }
+
+    .filters{
+        gap:7px;
+    }
+
+    .filter-btn{
+        padding:10px 15px;
+        font-size:10px;
+    }
+
+    .gallery-grid{
+        columns:2 140px;
+        column-gap:10px;
+    }
+
+    .gallery-item{
+        margin-bottom:10px;
+        border-radius:17px;
+    }
+
+    .gallery-item img{
+        min-height:130px;
+    }
+
+    .gallery-overlay{
+        padding:11px;
+    }
+
+    .gallery-overlay-title{
+        font-size:17px;
+    }
+
+    .gallery-overlay-category{
+        font-size:7px;
+    }
+
+    .whatsapp-float{
+        width:55px;
+        height:55px;
+
+        right:17px;
+        bottom:17px;
+    }
+
+    .lightbox{
+        padding:15px;
+    }
+
+    .lightbox-image{
+        border-radius:20px;
+        max-height:75vh;
+    }
+
+    .lightbox-prev,
+    .lightbox-next{
+        width:45px;
+        height:45px;
+    }
+
+    .lightbox-prev{
+        left:10px;
+    }
+
+    .lightbox-next{
+        right:10px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     TOP BAR
+     ===================================================== -->
+
+<div class="topbar">
+    Every Cake Tells a Story
+</div>
+
+
+<!-- =====================================================
+     NAVIGATION
+     ===================================================== -->
+
+<header class="navbar">
+
+    <div class="nav-inner">
+
+        <a href="index.html" class="brand">
+
+            <img
+                class="brand-logo"
+                src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2009.08.24.jpeg?raw=true"
+                alt="Bethel Cakes Logo"
+            >
+
+            <div class="brand-text">
+
+                <div class="brand-name">
+                    Bethel Cakes
+                </div>
+
+                <div class="brand-tagline">
+                    Every Cake Tells a Story
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <nav class="nav-links" id="navLinks">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="gallery.html" class="active">
+                Gallery
+            </a>
+
+            <a href="index.html#about">
+                About
+            </a>
+
+            <a href="index.html#contact">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <a href="login.html" class="account-btn">
+                My Account
+            </a>
+
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+                aria-label="Open menu"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content reveal">
+
+        <div class="eyebrow">
+            The Bethel Collection
+        </div>
+
+        <h1>
+            Made to be<br>
+            <span>remembered.</span>
+        </h1>
+
+        <p class="hero-description">
+            Explore a collection of handcrafted birthday and wedding cakes
+            created with elegance, creativity and attention to every detail.
+            At Bethel Cakes, every creation tells its own story.
+        </p>
+
+        <div class="hero-actions">
+
+            <a href="#collection" class="primary-btn">
+                Explore Gallery
+            </a>
+
+            <a
+                href="https://wa.me/27611554022?text=Hello%20Bethel%20Cakes%2C%20I%20would%20like%20to%20order%20a%20cake."
+                class="secondary-btn"
+                target="_blank"
+            >
+                Order on WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DIVIDER
+     ===================================================== -->
+
+<div class="gold-divider">
+
+    <span></span>
+    <i></i>
+    <span></span>
+
+</div>
+
+
+<!-- =====================================================
+     GALLERY
+     ===================================================== -->
+
+<section class="gallery-section" id="collection">
+
+    <div class="gallery-container">
+
+
+        <div class="section-heading reveal">
+
+            <div class="section-kicker">
+                Our Creations
+            </div>
+
+            <h2>
+                A Taste of<br>
+                Our Gallery
+            </h2>
+
+            <p>
+                From beautiful birthday celebrations to unforgettable
+                wedding moments, discover some of the cakes created
+                by Bethel Cakes.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             FILTERS
+             ================================================= -->
+
+        <div class="filters reveal">
+
+            <button
+                class="filter-btn active"
+                data-filter="all"
+            >
+                All Cakes
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="birthday"
+            >
+                Birthday Cakes
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="wedding"
+            >
+                Wedding Cakes
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             MOVING FEATURE STRIP
+             ================================================= -->
+
+        <div class="gallery-moving">
+
+            <div class="moving-track">
+
+
+                <div class="moving-card">
+                    <img
+                        src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.41.jpeg?raw=true"
+                        alt="Bethel Cakes Birthday Cake"
+                    >
+                </div>
+
+
+                <div class="moving-card">
+                    <img
+                        src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.42%20%281%29.jpeg?raw=true"
+                        alt="Bethel Cakes Birthday Cake"
+                    >
+                </div>
+
+
+                <div class="moving-card">
+                    <img
+                        src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.43.jpeg?raw=true"
+                        alt="Bethel Cakes Birthday Cake"
+                    >
+                </div>
+
+
+                <div class="moving-card">
+                    <img
+                        src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.45.jpeg?raw=true"
+                        alt="Bethel Cakes Birthday Cake"
+                    >
+                </div>
+
+
+                <div class="moving-card">
+                    <img
+                        src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.47.jpeg?raw=true"
+                        alt="Bethel Cakes Birthday Cake"
+                    >
+                </div>
+
+
+                <div class="moving-card">
+                    <img
+                        src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.13.50.jpeg?raw=true"
+                        alt="Bethel Cakes Wedding Cake"
+                    >
+                </div>
+
+
+                <div class="moving-card">
+                    <img
+                        src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.46.jpeg?raw=true"
+                        alt="Bethel Cakes Birthday Cake"
+                    >
+                </div>
+
+
+                <div class="moving-card">
+                    <img
+                        src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.48.jpeg?raw=true"
+                        alt="Bethel Cakes Birthday Cake"
+                    >
+                </div>
+
+
+                <!-- DUPLICATE SET FOR SEAMLESS LOOP -->
+
+                <div class="moving-card">
+                    <img
+                        src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.41.jpeg?raw=true"
+                        alt="Bethel Cakes Birthday Cake"
+                    >
+                </div>
+
+
+                <div class="moving-card">
+                    <img
+                        src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.42%20%281%29.jpeg?raw=true"
+                        alt="Bethel Cakes Birthday Cake"
+                    >
+                </div>
+
+
+                <div class="moving-card">
+                    <img
+                        src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.43.jpeg?raw=true"
+                        alt="Bethel Cakes Birthday Cake"
+                    >
+                </div>
+
+
+                <div class="moving-card">
+                    <img
+                        src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.45.jpeg?raw=true"
+                        alt="Bethel Cakes Birthday Cake"
+                    >
+                </div>
+
+
+                <div class="moving-card">
+                    <img
+                        src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.47.jpeg?raw=true"
+                        alt="Bethel Cakes Birthday Cake"
+                    >
+                </div>
+
+
+                <div class="moving-card">
+                    <img
+                        src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.13.50.jpeg?raw=true"
+                        alt="Bethel Cakes Wedding Cake"
+                    >
+                </div>
+
+
+                <div class="moving-card">
+                    <img
+                        src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.46.jpeg?raw=true"
+                        alt="Bethel Cakes Birthday Cake"
+                    >
+                </div>
+
+
+                <div class="moving-card">
+                    <img
+                        src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.48.jpeg?raw=true"
+                        alt="Bethel Cakes Birthday Cake"
+                    >
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             MAIN GALLERY
+             ================================================= -->
+
+        <div class="gallery-grid" id="galleryGrid">
+
+
+            <!-- WEDDING 1 -->
+
+            <article class="gallery-item reveal" data-category="wedding">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.13.50%20%282%29.jpeg?raw=true"
+                    alt="Bethel Cakes Wedding Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Wedding Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Wedding Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- WEDDING 2 -->
+
+            <article class="gallery-item reveal" data-category="wedding">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.13.50%20%281%29.jpeg?raw=true"
+                    alt="Bethel Cakes Wedding Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Wedding Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Wedding Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- WEDDING 3 -->
+
+            <article class="gallery-item reveal" data-category="wedding">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.13.50.jpeg?raw=true"
+                    alt="Bethel Cakes Wedding Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Wedding Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Wedding Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- WEDDING 4 -->
+
+            <article class="gallery-item reveal" data-category="wedding">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.17.00.jpeg?raw=true"
+                    alt="Bethel Cakes Wedding Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Wedding Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Wedding Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 1 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.41.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 2 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.42%20%281%29.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 3 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.42%20%282%29.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 4 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.42.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 5 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.43%20%281%29.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 6 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.43.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 7 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.44%20%281%29.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 8 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.44.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 9 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.45%20%281%29.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 10 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.45%20%282%29.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 11 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.45%20%283%29.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 12 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.45.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 13 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.46%20%281%29.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 14 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.46%20%282%29.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 15 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.46.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 16 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.47%20%281%29.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 17 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.47%20%282%29.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 18 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.47.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 19 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.48%20%281%29.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 20 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.48%20%282%29.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 21 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.48.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 22 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.49%20%281%29.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- BIRTHDAY 23 -->
+
+            <article class="gallery-item reveal" data-category="birthday">
+
+                <img
+                    src="https://github.com/djblessingm-crypto/Bethel-Cakes/blob/main/WhatsApp%20Image%202026-09-06%20at%2010.14.49.jpeg?raw=true"
+                    alt="Bethel Cakes Birthday Cake"
+                    loading="lazy"
+                >
+
+                <div class="gallery-overlay">
+
+                    <div class="gallery-overlay-content">
+
+                        <div class="gallery-overlay-title">
+                            Birthday Collection
+                        </div>
+
+                        <div class="gallery-overlay-category">
+                            Birthday Cake
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <div class="empty-state" id="emptyState">
+
+            <h3>
+                No cakes found
+            </h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+     ===================================================== -->
+
+<section class="cta-section">
+
+    <div class="cta">
+
+        <div class="cta-content">
+
+            <div class="cta-kicker">
+                Your celebration deserves something special
+            </div>
+
+            <h2>
+                Ready to create<br>
+                your cake story?
+            </h2>
+
+            <p>
+                Tell us what you are celebrating and let Bethel Cakes
+                create something beautiful for your special moment.
+            </p>
+
+            <div class="cta-buttons">
+
+                <a
+                    href="https://wa.me/27611554022?text=Hello%20Bethel%20Cakes%2C%20I%20would%20like%20to%20order%20a%20cake."
+                    target="_blank"
+                    class="primary-btn"
+                >
+                    Order on WhatsApp
+                </a>
+
+                <a
+                    href="index.html"
+                    class="secondary-btn"
+                >
+                    Back to Home
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-grid">
+
+
+            <div class="footer-brand">
+
+                <h3>
+                    Bethel Cakes
+                </h3>
+
+                <p>
+                    Beautiful cakes created for beautiful moments.
+                    Every creation is made with care, creativity
+                    and a little bit of sweetness.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <div class="footer-title">
+                    Explore
+                </div>
+
+                <div class="footer-links">
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="gallery.html">
+                        Gallery
+                    </a>
+
+                    <a href="index.html#about">
+                        About Us
+                    </a>
+
+                    <a href="login.html">
+                        My Account
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <div class="footer-title">
+                    Cakes
+                </div>
+
+                <div class="footer-links">
+
+                    <a href="#collection">
+                        Birthday Cakes
+                    </a>
+
+                    <a href="#collection">
+                        Wedding Cakes
+                    </a>
+
+                    <a
+                        href="https://wa.me/27611554022?text=Hello%20Bethel%20Cakes%2C%20I%20would%20like%20to%20order%20a%20cake."
+                        target="_blank"
+                    >
+                        Custom Cakes
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <div class="footer-title">
+                    Contact
+                </div>
+
+                <div class="footer-links">
+
+                    <a href="tel:0611554022">
+                        061 155 4022
+                    </a>
+
+                    <a
+                        href="https://wa.me/27611554022"
+                        target="_blank"
+                    >
+                        WhatsApp
+                    </a>
+
+                    <a
+                        href="https://maps.app.goo.gl/oEKR9ovDCus6sSZdA"
+                        target="_blank"
+                    >
+                        Find Us
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div>
+                © <span id="year"></span> Bethel Cakes. All rights reserved.
+            </div>
+
+            <div>
+                Every Cake Tells a Story
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     WHATSAPP
+     ===================================================== -->
+
+<a
+    href="https://wa.me/27611554022?text=Hello%20Bethel%20Cakes%2C%20I%20would%20like%20to%20order%20a%20cake."
+    target="_blank"
+    class="whatsapp-float"
+    aria-label="Order on WhatsApp"
+>
+    WA
+</a>
+
+
+<!-- =====================================================
+     LIGHTBOX
+     ===================================================== -->
+
+<div class="lightbox" id="lightbox">
+
+    <button
+        class="lightbox-close"
+        id="lightboxClose"
+        aria-label="Close"
+    >
+        ×
+    </button>
+
+    <button
+        class="lightbox-prev"
+        id="lightboxPrev"
+        aria-label="Previous image"
+    >
+        ‹
+    </button>
+
+    <div class="lightbox-content">
+
+        <img
+            class="lightbox-image"
+            id="lightboxImage"
+            src=""
+            alt="Bethel Cakes"
+        >
+
+    </div>
+
+    <button
+        class="lightbox-next"
+        id="lightboxNext"
+        aria-label="Next image"
+    >
+        ›
+    </button>
+
+    <div class="lightbox-caption" id="lightboxCaption">
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script>
+
+/* =========================================================
+   YEAR
+   ========================================================= */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+const mobileMenu =
+    document.getElementById("mobileMenu");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+mobileMenu.addEventListener("click", function(){
+
+    navLinks.classList.toggle("mobile-open");
+
+});
+
+
+document.querySelectorAll(".nav-links a").forEach(function(link){
+
+    link.addEventListener("click", function(){
+
+        navLinks.classList.remove("mobile-open");
+
+    });
+
+});
+
+
+/* =========================================================
+   FILTER SYSTEM
+   ========================================================= */
+
+const filterButtons =
+    document.querySelectorAll(".filter-btn");
+
+const galleryItems =
+    document.querySelectorAll(".gallery-item");
+
+const emptyState =
+    document.getElementById("emptyState");
+
+
+filterButtons.forEach(function(button){
+
+    button.addEventListener("click", function(){
+
+        const filter =
+            button.dataset.filter;
+
+
+        filterButtons.forEach(function(btn){
+
+            btn.classList.remove("active");
+
+        });
+
+
+        button.classList.add("active");
+
+
+        let visibleCount = 0;
+
+
+        galleryItems.forEach(function(item){
+
+            const category =
+                item.dataset.category;
+
+
+            if(
+                filter === "all" ||
+                category === filter
+            ){
+
+                item.style.display = "block";
+
+                visibleCount++;
+
+                setTimeout(function(){
+
+                    item.style.opacity = "1";
+                    item.style.transform = "translateY(0)";
+
+                },30);
+
+            }else{
+
+                item.style.opacity = "0";
+                item.style.transform = "translateY(12px)";
+
+                setTimeout(function(){
+
+                    item.style.display = "none";
+
+                },200);
+
+            }
+
+        });
+
+
+        if(visibleCount === 0){
+
+            emptyState.style.display = "block";
+
+        }else{
+
+            emptyState.style.display = "none";
+
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+
+const lightbox =
+    document.getElementById("lightbox");
+
+const lightboxImage =
+    document.getElementById("lightboxImage");
+
+const lightboxCaption =
+    document.getElementById("lightboxCaption");
+
+const lightboxClose =
+    document.getElementById("lightboxClose");
+
+const lightboxPrev =
+    document.getElementById("lightboxPrev");
+
+const lightboxNext =
+    document.getElementById("lightboxNext");
+
+
+let visibleImages = [];
+
+let currentImage = 0;
+
+
+function refreshVisibleImages(){
+
+    visibleImages =
+        Array.from(galleryItems)
+        .filter(function(item){
+
+            return item.style.display !== "none";
+
+        });
+
+}
+
+
+function openLightbox(index){
+
+    refreshVisibleImages();
+
+    currentImage = index;
+
+    showLightboxImage();
+
+    lightbox.classList.add("show");
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+function showLightboxImage(){
+
+    const item =
+        visibleImages[currentImage];
+
+    if(!item) return;
+
+
+    const image =
+        item.querySelector("img");
+
+
+    lightboxImage.src =
+        image.src;
+
+
+    lightboxImage.alt =
+        image.alt;
+
+
+    lightboxCaption.textContent =
+        image.alt;
+
+}
+
+
+function closeLightbox(){
+
+    lightbox.classList.remove("show");
+
+    document.body.style.overflow = "";
+
+}
+
+
+function previousImage(){
+
+    if(!visibleImages.length) return;
+
+
+    currentImage--;
+
+    if(currentImage < 0){
+
+        currentImage =
+            visibleImages.length - 1;
+
+    }
+
+
+    showLightboxImage();
+
+}
+
+
+function nextImage(){
+
+    if(!visibleImages.length) return;
+
+
+    currentImage++;
+
+    if(currentImage >= visibleImages.length){
+
+        currentImage = 0;
+
+    }
+
+
+    showLightboxImage();
+
+}
+
+
+galleryItems.forEach(function(item){
+
+    item.addEventListener("click", function(){
+
+        refreshVisibleImages();
+
+        const index =
+            visibleImages.indexOf(item);
+
+        openLightbox(index);
+
+    });
+
+});
+
+
+lightboxClose.addEventListener(
+    "click",
+    closeLightbox
+);
+
+
+lightboxPrev.addEventListener(
+    "click",
+    previousImage
+);
+
+
+lightboxNext.addEventListener(
+    "click",
+    nextImage
+);
+
+
+lightbox.addEventListener("click", function(event){
+
+    if(event.target === lightbox){
+
+        closeLightbox();
+
+    }
+
+});
+
+
+document.addEventListener("keydown", function(event){
+
+    if(!lightbox.classList.contains("show")){
+
+        return;
+
+    }
+
+
+    if(event.key === "Escape"){
+
+        closeLightbox();
+
+    }
+
+
+    if(event.key === "ArrowLeft"){
+
+        previousImage();
+
+    }
+
+
+    if(event.key === "ArrowRight"){
+
+        nextImage();
+
+    }
+
+});
+
+
+/* =========================================================
+   REVEAL ANIMATIONS
+   ========================================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+const revealObserver =
+    new IntersectionObserver(
+
+        function(entries){
+
+            entries.forEach(function(entry){
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add("visible");
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold:.08
+        }
+
+    );
+
+
+revealElements.forEach(function(element){
+
+    revealObserver.observe(element);
+
+});
+
+
+/* =========================================================
+   INITIAL VISIBILITY
+   ========================================================= */
+
+window.addEventListener("load", function(){
+
+    document.querySelectorAll(".reveal").forEach(function(element){
+
+        const rect =
+            element.getBoundingClientRect();
+
+
+        if(rect.top < window.innerHeight){
+
+            element.classList.add("visible");
+
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

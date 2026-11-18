@@ -1,0 +1,12 @@
+{
+  "port": 3000,
+  "adminKey": "BethelAdmin2026",
+  "smtp": {
+    "host": "smtp.gmail.com",
+    "port": 465,
+    "secure": true,
+    "user": "bethelcakesglobal@gmail.com",
+    "pass": "hpiyuaeppegxzxuz",
+    "from": "Bethel Cakes ^<bethelcakesglobal@gmail.com^>"
+  }
+}

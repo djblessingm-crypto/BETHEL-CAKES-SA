@@ -1,0 +1,669 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin | Bethel Cakes</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+--wine:#6d1025;
+--dark:#4b0718;
+--gold:#c9a45c;
+--cream:#fffaf5;
+--soft:#f4e8df;
+--text:#302125;
+--muted:#806f72;
+--white:#fff;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:
+radial-gradient(circle at top left,rgba(201,164,92,.15),transparent 30%),
+var(--cream);
+color:var(--text);
+min-height:100vh;
+}
+
+.navbar{
+width:min(1180px,calc(100% - 30px));
+margin:18px auto;
+padding:12px 18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,250,245,.94);
+border:1px solid rgba(109,16,37,.1);
+border-radius:999px;
+box-shadow:0 15px 40px rgba(70,27,37,.1);
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo{
+width:48px;
+height:48px;
+object-fit:cover;
+border-radius:16px;
+}
+
+.brand-name{
+font-family:Georgia,serif;
+font-size:20px;
+font-weight:bold;
+color:var(--wine);
+}
+
+.brand-small{
+font-size:10px;
+color:var(--muted);
+letter-spacing:1.5px;
+text-transform:uppercase;
+}
+
+.home{
+padding:11px 17px;
+border-radius:999px;
+background:var(--wine);
+color:white;
+text-decoration:none;
+font-size:13px;
+font-weight:bold;
+}
+
+.page{
+width:min(1100px,calc(100% - 30px));
+margin:auto;
+padding:55px 0 80px;
+}
+
+.hero{
+padding:50px;
+border-radius:40px;
+background:linear-gradient(135deg,var(--dark),var(--wine),#81223a);
+color:white;
+box-shadow:0 25px 60px rgba(78,10,28,.2);
+margin-bottom:25px;
+}
+
+.eyebrow{
+color:#e6cc91;
+font-size:10px;
+letter-spacing:2px;
+text-transform:uppercase;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+h1{
+font-family:Georgia,serif;
+font-weight:normal;
+font-size:55px;
+margin-bottom:12px;
+}
+
+.hero p{
+color:rgba(255,255,255,.75);
+font-size:14px;
+line-height:1.7;
+}
+
+.panel{
+background:white;
+border-radius:30px;
+padding:30px;
+box-shadow:0 18px 45px rgba(70,27,37,.08);
+border:1px solid rgba(109,16,37,.08);
+margin-bottom:22px;
+}
+
+.panel h2{
+font-family:Georgia,serif;
+font-weight:normal;
+color:var(--wine);
+font-size:28px;
+margin-bottom:18px;
+}
+
+input{
+width:100%;
+padding:15px 17px;
+border-radius:15px;
+border:1px solid #ddd0d2;
+outline:none;
+font-size:14px;
+margin-bottom:12px;
+}
+
+input:focus{
+border-color:var(--gold);
+}
+
+button{
+border:0;
+border-radius:14px;
+padding:13px 19px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.primary{
+background:var(--wine);
+color:white;
+}
+
+.gold{
+background:var(--gold);
+color:white;
+}
+
+.danger{
+background:#9b2438;
+color:white;
+}
+
+.muted{
+background:var(--soft);
+color:var(--wine);
+}
+
+#status{
+margin-top:12px;
+font-size:13px;
+color:var(--muted);
+}
+
+.review{
+padding:25px;
+border:1px solid rgba(109,16,37,.09);
+border-radius:25px;
+margin-bottom:15px;
+background:#fffdfb;
+}
+
+.review.pending{
+border-left:5px solid var(--gold);
+}
+
+.review.approved{
+border-left:5px solid var(--wine);
+}
+
+.review-top{
+display:flex;
+justify-content:space-between;
+gap:15px;
+margin-bottom:12px;
+}
+
+.name{
+font-weight:bold;
+color:var(--wine);
+}
+
+.date{
+font-size:11px;
+color:var(--muted);
+margin-top:4px;
+}
+
+.stars{
+color:var(--gold);
+letter-spacing:2px;
+margin-bottom:12px;
+}
+
+.review-text{
+font-family:Georgia,serif;
+line-height:1.7;
+margin-bottom:18px;
+color:#49383c;
+}
+
+.badge{
+display:inline-block;
+padding:6px 10px;
+border-radius:999px;
+font-size:10px;
+font-weight:bold;
+text-transform:uppercase;
+letter-spacing:1px;
+}
+
+.badge.pending{
+background:#fff1ce;
+color:#85631c;
+}
+
+.badge.approved{
+background:#f2e3e7;
+color:var(--wine);
+}
+
+.actions{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+}
+
+.hidden{
+display:none;
+}
+
+.empty{
+padding:45px;
+text-align:center;
+color:var(--muted);
+background:var(--soft);
+border-radius:25px;
+}
+
+footer{
+text-align:center;
+font-size:11px;
+color:var(--muted);
+padding-bottom:30px;
+}
+
+@media(max-width:650px){
+.navbar{margin-top:10px}
+.brand-small{display:none}
+.page{padding-top:30px}
+.hero{padding:35px 25px;border-radius:30px}
+h1{font-size:42px}
+.panel{padding:22px}
+.review-top{flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<a href="index.html" class="brand">
+<img
+class="logo"
+src="https://raw.githubusercontent.com/djblessingm-crypto/bbethel-cakes-images/main/WhatsApp%20Image%202026-09-06%20at%2009.08.24%20(1).jpeg"
+alt="Bethel Cakes"
+>
+<div>
+<div class="brand-name">Bethel Cakes</div>
+<div class="brand-small">Administration</div>
+</div>
+</a>
+
+<a href="index.html" class="home">Back to Website</a>
+</nav>
+
+<main class="page">
+
+<section class="hero">
+<div class="eyebrow">Private Administration</div>
+<h1>Review Management</h1>
+<p>
+Manage customer reviews, approve new submissions,
+and keep the Bethel Cakes customer experience looking its best.
+</p>
+</section>
+
+<section class="panel" id="loginPanel">
+
+<h2>Admin Access</h2>
+
+<input
+type="password"
+id="adminKey"
+placeholder="Enter your private admin key"
+>
+
+<button
+class="primary"
+onclick="loadReviews()"
+>
+Open Admin Panel
+</button>
+
+<div id="status"></div>
+
+</section>
+
+<section
+class="panel hidden"
+id="reviewsPanel"
+>
+
+<h2>Customer Reviews</h2>
+
+<div id="reviews">
+Loading reviews...
+</div>
+
+</section>
+
+</main>
+
+<footer>
+© 2026 Bethel Cakes. Administration Panel.
+</footer>
+
+<script>
+
+let adminKey = "";
+
+function escapeHtml(value){
+return String(value || "").replace(/[&<>"']/g,character=>{
+const map={
+"&":"&amp;",
+"<":"&lt;",
+">":"&gt;",
+'"':"&quot;",
+"'":"&#039;"
+};
+return map[character];
+});
+}
+
+function formatDate(value){
+
+const date=new Date(value);
+
+if(Number.isNaN(date.getTime())){
+return "";
+}
+
+return date.toLocaleDateString("en-ZA",{
+day:"numeric",
+month:"long",
+year:"numeric"
+});
+}
+
+function stars(rating){
+
+const number=Math.max(
+1,
+Math.min(5,Number(rating))
+);
+
+return "★".repeat(number);
+
+}
+
+async function loadReviews(){
+
+const input=
+document.getElementById("adminKey");
+
+adminKey=input.value.trim();
+
+const status=
+document.getElementById("status");
+
+if(!adminKey){
+
+status.textContent=
+"Enter your admin key first.";
+
+return;
+}
+
+status.textContent=
+"Loading reviews...";
+
+try{
+
+const response=
+await fetch("/api/admin/reviews",{
+headers:{
+"x-admin-key":adminKey
+}
+});
+
+const data=
+await response.json();
+
+if(!response.ok){
+
+throw new Error(
+data.error || "Access denied."
+);
+
+}
+
+document
+.getElementById("loginPanel")
+.classList.add("hidden");
+
+document
+.getElementById("reviewsPanel")
+.classList.remove("hidden");
+
+displayReviews(
+Array.isArray(data.reviews)
+? data.reviews
+: []
+);
+
+}catch(error){
+
+status.textContent=
+error.message ||
+"Could not connect to the admin system.";
+
+}
+
+}
+
+function displayReviews(reviews){
+
+const container=
+document.getElementById("reviews");
+
+if(!reviews.length){
+
+container.innerHTML=`
+<div class="empty">
+No customer reviews have been submitted yet.
+</div>
+`;
+
+return;
+}
+
+container.innerHTML=
+reviews.map(review=>{
+
+const approved=
+review.approved === true;
+
+return`
+
+<div class="review ${approved ? "approved" : "pending"}">
+
+<div class="review-top">
+
+<div>
+
+<div class="name">
+${escapeHtml(
+review.name || "Customer"
+)}
+</div>
+
+<div class="date">
+${formatDate(review.createdAt)}
+</div>
+
+</div>
+
+<span class="badge ${approved ? "approved" : "pending"}">
+${approved ? "Approved" : "Pending"}
+</span>
+
+</div>
+
+<div class="stars">
+${stars(review.rating)}
+</div>
+
+<div class="review-text">
+${escapeHtml(review.text)}
+</div>
+
+<div class="actions">
+
+${
+approved
+?
+`
+<button
+class="muted"
+onclick="setReview('${review.id}',false)"
+>
+Set Pending
+</button>
+`
+:
+`
+<button
+class="gold"
+onclick="setReview('${review.id}',true)"
+>
+Approve
+</button>
+`
+}
+
+<button
+class="danger"
+onclick="deleteReview('${review.id}')"
+>
+Delete
+</button>
+
+</div>
+
+</div>
+
+`;
+
+}).join("");
+
+}
+
+async function setReview(id,approved){
+
+try{
+
+const response=
+await fetch(
+"/api/admin/reviews/"+encodeURIComponent(id),
+{
+method:"PATCH",
+headers:{
+"Content-Type":"application/json",
+"x-admin-key":adminKey
+},
+body:JSON.stringify({
+approved:approved
+})
+}
+);
+
+const data=
+await response.json();
+
+if(!response.ok){
+
+throw new Error(
+data.error || "Could not update review."
+);
+
+}
+
+displayReviews(
+Array.isArray(data.reviews)
+? data.reviews
+: []
+);
+
+}catch(error){
+
+alert(
+error.message ||
+"Could not update review."
+);
+
+}
+
+}
+
+async function deleteReview(id){
+
+const confirmed=
+confirm(
+"Delete this customer review permanently?"
+);
+
+if(!confirmed){
+return;
+}
+
+try{
+
+const response=
+await fetch(
+"/api/admin/reviews/"+encodeURIComponent(id),
+{
+method:"PATCH",
+headers:{
+"Content-Type":"application/json",
+"x-admin-key":adminKey
+},
+body:JSON.stringify({
+delete:true
+})
+}
+);
+
+const data=
+await response.json();
+
+if(!response.ok){
+
+throw new Error(
+data.error || "Could not delete review."
+);
+
+}
+
+displayReviews(
+Array.isArray(data.reviews)
+? data.reviews
+: []
+);
+
+}catch(error){
+
+alert(
+error.message ||
+"Could not delete review."
+);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
+
